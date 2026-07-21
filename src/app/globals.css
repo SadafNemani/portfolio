@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-background: #020305;
+
+  --color-surface: #0b0f14;
+  --color-surface-secondary: #121821;
+
+  --color-glass: rgba(255, 255, 255, 0.04);
+
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #9ca3af;
+
+  --color-emerald: #34d399;
+  --color-emerald-light: #6ee7b7;
+
+  /* Radius */
+  --radius-card: 28px;
+  --radius-button: 18px;
+  --radius-input: 16px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-glass: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-emerald: 0 0 35px rgba(52, 211, 153, 0.35);
+
+  /* Fonts */
+  --font-sans: var(--font-montserrat);
+  --font-rtl: var(--font-anjoman);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+::selection {
+  background: #34d399;
+  color: #020305;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020305;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #34d399;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6ee7b7;
+}
