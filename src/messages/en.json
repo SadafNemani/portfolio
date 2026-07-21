@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Technologies",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "title": "Frontend Developer",
+    "subtitle": "Building beautiful, high-performance web experiences."
+  }
+}
