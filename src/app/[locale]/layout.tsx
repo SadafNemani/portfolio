@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { montserrat, anjoman } from "@/lib/fonts";
 
+import type { Locale } from "@/types/locale";
+
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ type Props = {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "fa")) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
