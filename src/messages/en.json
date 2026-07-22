@@ -1,14 +1,114 @@
 {
   "navigation": {
     "about": "About",
+    "technologies": "Technologies",
     "projects": "Projects",
-    "skills": "Technologies",
     "testimonials": "Testimonials",
     "contact": "Contact"
   },
 
   "hero": {
-    "title": "Frontend Developer",
-    "subtitle": "Building beautiful, high-performance web experiences."
+    "sectionTitle": "FRONTEND DEVELOPER",
+    "title": "I Build Websites People Remember.",
+    "subtitle": "Frontend Developer crafting premium digital experiences with React, Next.js and WordPress",
+    "codeTextTitle": "myQualities.ts",
+    "codeText": "const principles = [\n“Performance first”,\n“Pixel perfect”,\n“Accessibility”,\n“Meaningful motion”,\n];",
+    "primaryButton": "View my work",
+    "secondaryButton": "Let's talk"
+  },
+
+  "about": {
+    "sectionTitle": "ABOUT ME",
+    "title": "I'm Sadaf Nemani, a passionate Frontend Developer.",
+    "subtitle": "I'm a Front-End Developer with a background in WordPress development and a growing passion for React and Next.js",
+
+    "downloadCV": "Download My CV",
+
+    "statistics": {
+      "projects": "Projects",
+      "experience": "Experience",
+      "clients": "Clients"
+    },
+
+    "characteristics": {
+      "attentionToDetail": {
+        "title": "Attention to Detail",
+        "subtitle": "Every interaction is crafted with care, from typography to performance."
+      },
+
+      "problemSolver": {
+        "title": "Problem Solver",
+        "subtitle": "Turning complex challenges into simple digital experiences."
+      },
+
+      "continuousLearner": {
+        "title": "Continuous Learner",
+        "subtitle": "Always exploring modern technologies and improving every day."
+      },
+
+      "reliable": {
+        "title": "Reliable",
+        "subtitle": "Communication, responsibility and meeting deadlines matter."
+      }
+    }
+  },
+
+  "technologies": {
+    "sectionTitle": "TECHNOLOGIES",
+    "title": "Technologies I Work With.",
+    "subtitle": "The technologies I use to build beautiful digital experiences.",
+
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cms": "CMS",
+      "design": "Design"
+    }
+  },
+
+  "projects": {
+    "sectionTitle": "PROJECTS",
+    "title": "My Selected Works.",
+
+    "items": {
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "category": "Branding Website",
+        "description": "A modern multilingual portfolio built with Next.js and TypeScript."
+      }
+    }
+  },
+
+  "testimonials": {
+    "sectionTitle": "TESTIMONIALS",
+    "title": "People I've Worked With.",
+    "subtitle": "Real feedback from people I've worked with on freelance projects.",
+
+    "items": {
+      "client1": {
+        "name": "Naif Al-Faqeeh",
+        "review": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus."
+      }
+    }
+  },
+
+  "contact": {
+    "sectionTitle": "LET'S WORK TOGETHER",
+    "title": "Have an idea? Let's build something remarkable.",
+    "contactDetail": "Usually replies within 24 hours\nOpen to freelance projects",
+
+    "namePlaceholder": "Your Name...",
+    "emailPlaceholder": "Your Email...",
+    "subjectPlaceholder": "Subject...",
+    "messagePlaceholder": "Message...",
+
+    "sendButton": "Send Message"
+  },
+
+  "footer": {
+    "myName": "Sadaf Nemani",
+    "mySpecialty": "Frontend Developer",
+    "copyright": "© 2026 Sadaf Nemani",
+    "footerDetails": "Designed & Developed using Next.js,\nBuilt with curiosity, patience, and a love for beautiful web experiences"
   }
 }
