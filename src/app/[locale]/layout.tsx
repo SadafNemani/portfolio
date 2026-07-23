@@ -32,8 +32,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const isRTL = locale === "fa";
 
   return (
-    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning>
-      <body className={`${isRTL ? anjoman.variable : montserrat.variable} antialiased`}>
+    <html
+      lang={locale}
+      dir={isRTL ? "rtl" : "ltr"}
+      className={`${montserrat.variable} ${anjoman.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="antialiased">
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>

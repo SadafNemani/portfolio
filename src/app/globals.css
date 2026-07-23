@@ -17,6 +17,10 @@
   --color-emerald: #34d399;
   --color-emerald-light: #6ee7b7;
 
+  --color-accent: #dacb8b;
+
+  --gradient-primary: radial-gradient(circle at 0%, #67f3b4 0%, #dacb8b 50%, #2dd489 100%);
+
   /* Radius */
   --radius-card: 28px;
   --radius-button: 18px;
@@ -31,10 +35,20 @@
   /* Fonts */
   --font-sans: var(--font-montserrat);
   --font-rtl: var(--font-anjoman);
+
+  /* Font Size */
+  --text-section-heading: 56px;
+  --text-section-label: 14px;
+  --text-section-description: 22px;
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+html[dir="rtl"] {
+  font-family: var(--font-rtl);
 }
 
 body {
@@ -62,4 +76,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6ee7b7;
+}
+
+.gradient-text-primary {
+  background: var(--gradient-primary);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
