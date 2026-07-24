@@ -20,6 +20,7 @@
   --color-accent: #dacb8b;
 
   --gradient-primary: radial-gradient(circle at 0%, #67f3b4 0%, #dacb8b 50%, #2dd489 100%);
+  --gradient-button: linear-gradient(#31d68e 0%, #199e68 100%);
 
   /* Radius */
   --radius-card: 28px;
@@ -29,6 +30,7 @@
 
   /* Shadows */
   --shadow-card: 0 0 18px rgba(52, 211, 153, 0.25), 0 12px 35px rgba(0, 0, 0, 0.25);
+  --shadow-button: 0 0 18px rgba(52, 211, 153, 0.25), 0 12px 35px rgba(0, 0, 0, 0.25);
   --shadow-emerald: 0 0 35px rgba(52, 211, 153, 0.35);
 
   /* Fonts */
@@ -86,4 +88,8 @@ body {
 
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+.gradient-button-background {
+  background: var(--gradient-button);
 }
