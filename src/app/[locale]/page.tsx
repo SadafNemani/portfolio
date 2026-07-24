@@ -7,7 +7,7 @@ import SectionLabel from "@/components/typography/SectionLabel";
 export default function HomePage() {
   return (
     <main>
-      <h1>Hello Sadafii</h1>
+      <h1>Hello</h1>
     </main>
   );
 }
