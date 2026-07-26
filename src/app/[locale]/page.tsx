@@ -1,3 +1,4 @@
+import LanguageSwitcher from "@/components/navigation/LanguageSwitcher";
 import AccentText from "@/components/typography/AccentText";
 import GradientText from "@/components/typography/GradientText";
 import SectionDescription from "@/components/typography/SectionDescription";
@@ -8,6 +9,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>Hello</h1>
+      <LanguageSwitcher />
     </main>
   );
 }
