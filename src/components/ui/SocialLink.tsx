@@ -18,7 +18,7 @@ export default function SocialLink({ icon, label, className, ...props }: SocialL
     >
       <span className="text-emerald flex items-center justify-center">{icon}</span>
 
-      {label && <span className="text-input text-text-primary font-medium">{label}</span>}
+      {label && <span className="text-body text-text-primary font-medium">{label}</span>}
     </a>
   );
 }

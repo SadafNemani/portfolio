@@ -20,7 +20,7 @@ export default function ScrollIndicator({
     >
       <span className="text-emerald">{icon}</span>
 
-      <span className="text-input text-text-secondary font-medium">{children}</span>
+      <span className="text-body text-text-secondary font-medium">{children}</span>
     </a>
   );
 }
