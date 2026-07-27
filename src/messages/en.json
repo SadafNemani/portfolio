@@ -76,7 +76,10 @@
         "category": "Branding Website",
         "description": "A modern multilingual portfolio built with Next.js and TypeScript."
       }
-    }
+    },
+
+    "liveButton": "See Live",
+    "githubButton": "See Source Code"
   },
 
   "testimonials": {
