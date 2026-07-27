@@ -83,7 +83,7 @@ export const technologies: Technology[] = [
   {
     id: "premiere",
     name: "Premiere Pro",
-    logo: "logos/premiere.svg",
+    logo: "/logos/premiere.svg",
     category: "design",
   },
 ];
