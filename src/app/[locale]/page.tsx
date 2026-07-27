@@ -1,15 +1,28 @@
-import LanguageSwitcher from "@/components/navigation/LanguageSwitcher";
-import AccentText from "@/components/typography/AccentText";
-import GradientText from "@/components/typography/GradientText";
-import SectionDescription from "@/components/typography/SectionDescription";
-import SectionHeading from "@/components/typography/SectionHeading";
-import SectionLabel from "@/components/typography/SectionLabel";
+import Navbar from "@/components/navigation/Navbar";
+
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Technologies from "@/components/sections/Technologies";
+import Projects from "@/components/sections/Projects";
+import Testimonials from "@/components/sections/Testimonials";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 export default function HomePage() {
   return (
-    <main>
-      <h1>Hello</h1>
-      <LanguageSwitcher />
-    </main>
+    <>
+      <Navbar />
+
+      <main>
+        <Hero />
+        <About />
+        <Technologies />
+        <Projects />
+        <Testimonials />
+        <Contact />
+      </main>
+
+      <Footer />
+    </>
   );
 }
