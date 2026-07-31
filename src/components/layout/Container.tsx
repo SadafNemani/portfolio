@@ -8,7 +8,7 @@ interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Container({ children, className, ...props }: ContainerProps) {
   return (
-    <div className={cn("mx-auto w-full max-w-[1200px] px-5 sm:px-8 xl:px-0", className)} {...props}>
+    <div className={cn("mx-auto w-full max-w-300 px-5 sm:px-8 xl:px-0", className)} {...props}>
       {children}
     </div>
   );

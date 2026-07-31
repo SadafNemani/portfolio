@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
-import HeroCodeCard from "@/components/hero/HeroCodeCard";
 import SectionDescription from "@/components/typography/SectionDescription";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
