@@ -8,7 +8,7 @@ import { montserrat, anjoman } from "@/lib/fonts";
 
 import type { Locale } from "@/types/locale";
 
-import "../globals.css";
+import "@/app/globals.css";
 import Navbar from "@/components/navigation/Navbar";
 
 export const metadata: Metadata = {

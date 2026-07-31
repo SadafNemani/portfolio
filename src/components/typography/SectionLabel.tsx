@@ -11,14 +11,14 @@ interface SectionLabelProps extends HTMLAttributes<HTMLParagraphElement> {
 export default function SectionLabel({ children, className, ...props }: SectionLabelProps) {
   return (
     <div className="inline-flex items-center gap-2 uppercase">
-      <Circle className="size-2 fill-current" strokeWidth={0} />
+      <Circle className="text-emerald size-2 fill-current" strokeWidth={0} />
       <p
         className={cn("text-emerald text-section-label font-medium tracking-[0.2%]", className)}
         {...props}
       >
         {children}
       </p>
-      <Circle className="size-2 fill-current" strokeWidth={0} />
+      <Circle className="text-emerald size-2 fill-current" strokeWidth={0} />
     </div>
   );
 }

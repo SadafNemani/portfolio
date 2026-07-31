@@ -9,7 +9,7 @@
 
   "hero": {
     "sectionTitle": "FRONTEND DEVELOPER",
-    "title": "I Build Websites People Remember.",
+    "title": "I Build Websites People <gradient>Remember</gradient><accent>.</accent>",
     "subtitle": "Frontend Developer crafting premium digital experiences with React, Next.js and WordPress",
     "codeTextTitle": "myQualities.ts",
     "codeText": "const principles = [\n“Performance first”,\n“Pixel perfect”,\n“Accessibility”,\n“Meaningful motion”,\n];",

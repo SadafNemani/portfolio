@@ -14,7 +14,7 @@ export default function SectionDescription({
   return (
     <p
       className={cn(
-        "text-text-secondary text-paragraph leading-[170%] font-medium tracking-[-0.03em]",
+        "text-text-secondary text-section-description leading-[170%] font-medium tracking-[-0.03em]",
         className
       )}
       {...props}
