@@ -2,8 +2,8 @@ import GlassCard from "@/components/ui/GlassCard";
 
 export default function HeroCodeCard() {
   return (
-    <GlassCard className="max-w-md p-7">
-      <pre className="overflow-x-auto font-mono text-sm leading-7 whitespace-pre-wrap">
+    <GlassCard className="w-75 p-7">
+      <pre className="text-section-label overflow-x-auto font-mono leading-7 whitespace-pre-wrap">
         <span className="text-[#C586C0]">const</span>{" "}
         <span className="text-emerald-light">sadaf</span> <span className="text-white">=</span>{" "}
         <span className="text-white">{"{"}</span>

@@ -14,7 +14,8 @@
     "codeTextTitle": "myQualities.ts",
     "codeText": "const principles = [\n“Performance first”,\n“Pixel perfect”,\n“Accessibility”,\n“Meaningful motion”,\n];",
     "primaryButton": "View my work",
-    "secondaryButton": "Let's talk"
+    "secondaryButton": "Let's talk",
+    "scrollIndicator": "Scroll to explore"
   },
 
   "about": {
