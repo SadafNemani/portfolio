@@ -9,6 +9,7 @@ import { montserrat, anjoman } from "@/lib/fonts";
 import type { Locale } from "@/types/locale";
 
 import "../globals.css";
+import Navbar from "@/components/navigation/Navbar";
 
 export const metadata: Metadata = {
   title: "Sadaf Nemani",
@@ -39,7 +40,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

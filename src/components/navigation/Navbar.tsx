@@ -18,31 +18,36 @@ export default function Navbar({ className, ...props }: NavbarProps) {
   return (
     <header
       className={cn(
-        "rounded-pill bg-glass shadow-button fixed top-8 left-1/2 z-50 flex w-full max-w-300 -translate-x-1/2 items-center justify-between border border-emerald-900 px-5 py-3 backdrop-blur-2xl",
+        "rounded-pill border-border bg-glass shadow-card fixed top-6 left-1/2 z-50 grid w-[min(880px,calc(100%-3rem))] -translate-x-1/2 grid-cols-[1fr_auto_1fr] items-center overflow-visible border px-6 py-2.5 ring-1 ring-white/6 backdrop-blur-2xl ring-inset",
         className
       )}
       {...props}
     >
-      <Image
-        src="/logos/SadafLogo.svg"
-        alt="Sadaf Nemani initials logo"
-        width={60}
-        className="cursor-pointer transition-transform duration-300 select-none hover:scale-105"
-      />
+      <div className="flex shrink-0 items-center justify-start">
+        <Image
+          src="/logos/SadafLogo.svg"
+          alt="Sadaf Nemani initials logo"
+          width={60}
+          height={54}
+          className="cursor-pointer transition-transform duration-300 select-none hover:scale-[1.03]"
+        />
+      </div>
 
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center justify-center gap-7 px-4">
         {NAVIGATION_ITEMS.map((item) => (
           <a
             key={item}
             href={`#${item}`}
-            className="text-body text-text-secondary hover:text-text-primary active:text-emerald-light font-medium transition-all duration-300 hover:-translate-y-0.5 active:font-semibold"
+            className="text-body text-text-secondary after:bg-emerald/50 hover:text-text-primary active:text-emerald-light relative font-medium tracking-[-0.02em] transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full active:font-semibold"
           >
             {t(item)}
           </a>
         ))}
       </nav>
 
-      <LanguageSwitcher />
+      <div className="relative flex shrink-0 items-center justify-end overflow-visible">
+        <LanguageSwitcher />
+      </div>
     </header>
   );
 }
