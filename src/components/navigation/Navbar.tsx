@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
 
@@ -12,8 +10,8 @@ import Image from "next/image";
 
 type NavbarProps = React.ComponentProps<"header">;
 
-export default function Navbar({ className, ...props }: NavbarProps) {
-  const t = useTranslations("navigation");
+export default async function Navbar({ className, ...props }: NavbarProps) {
+  const t = await getTranslations("navigation");
 
   return (
     <header

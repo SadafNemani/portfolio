@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
 
@@ -18,8 +16,8 @@ interface ProjectCardProps extends React.ComponentProps<typeof GlassCard> {
   project: Project;
 }
 
-export default function ProjectCard({ project, className, ...props }: ProjectCardProps) {
-  const t = useTranslations("projects.items");
+export default async function ProjectCard({ project, className, ...props }: ProjectCardProps) {
+  const t = await getTranslations("projects.items");
 
   return (
     <GlassCard className={cn("flex gap-10 p-5", className)} {...props}>

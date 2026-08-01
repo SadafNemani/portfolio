@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
 
@@ -12,8 +10,8 @@ import PrimaryButton from "../ui/PrimaryButton";
 
 type ContactCardProps = React.ComponentProps<typeof GlassCard>;
 
-export default function ContactCard({ className, ...props }: ContactCardProps) {
-  const t = useTranslations("contact");
+export default async function ContactCard({ className, ...props }: ContactCardProps) {
+  const t = await getTranslations("contact");
 
   return (
     <GlassCard className={cn("flex flex-col gap-6 p-5", className)} {...props}>

@@ -1,20 +1,20 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 
 import { Statistic } from "@/types/about";
 
 import GlassCard from "../ui/GlassCard";
-
-import { useTranslations } from "next-intl";
-import React from "react";
+import { getTranslations } from "next-intl/server";
 
 interface StatisticCardProps extends React.ComponentProps<typeof GlassCard> {
   statistic: Statistic;
 }
 
-export default function StatisticCard({ statistic, className, ...props }: StatisticCardProps) {
-  const t = useTranslations("about.statistics");
+export default async function StatisticCard({
+  statistic,
+  className,
+  ...props
+}: StatisticCardProps) {
+  const t = await getTranslations("about.statistics");
 
   return (
     <GlassCard

@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
 
@@ -14,12 +12,12 @@ interface TestimonialCardProps extends React.ComponentProps<typeof GlassCard> {
   testimonial: Testimonial;
 }
 
-export default function TestimonialCard({
+export default async function TestimonialCard({
   testimonial,
   className,
   ...props
 }: TestimonialCardProps) {
-  const t = useTranslations("testimonials.items");
+  const t = await getTranslations("testimonials.items");
 
   return (
     <GlassCard className={cn("flex flex-col items-start gap-6 p-7", className)} {...props}>
