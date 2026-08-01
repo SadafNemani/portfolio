@@ -11,7 +11,8 @@ export default function SocialLink({ icon, label, className, ...props }: SocialL
   return (
     <a
       className={cn(
-        "rounded-button border-border bg-glass shadow-button flex h-14 cursor-pointer items-center gap-3 border backdrop-blur-2xl transition-all select-none",
+        "rounded-pill border-border bg-glass shadow-button flex h-14 cursor-pointer items-center gap-3 border backdrop-blur-2xl transition-all select-none",
+        !label && "w-14 justify-center",
         className
       )}
       {...props}

@@ -1,8 +1,6 @@
-import { Mail, Mailbox } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import type { Social } from "@/types/socials";
-
-import { SOCIAL_LINKS } from "@/constants";
 
 export const socials: Social[] = [
   {
@@ -20,7 +18,7 @@ export const socials: Social[] = [
   {
     id: "email",
     name: "Email",
-    lucideIcon: Mailbox,
+    lucideIcon: Mail,
     href: "mailto:sedefnemani@gmail.com",
   },
 ];

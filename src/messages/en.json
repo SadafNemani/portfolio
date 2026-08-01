@@ -113,6 +113,6 @@
     "myName": "Sadaf Nemani",
     "mySpecialty": "Frontend Developer",
     "copyright": "© 2026 Sadaf Nemani",
-    "footerDetails": "Designed & Developed using Next.js,\nBuilt with curiosity, patience, and a love for beautiful web experiences"
+    "footerDetails": "Designed & Developed using Next.js,<br></br>Built with curiosity, patience, and a love for beautiful web experiences"
   }
 }

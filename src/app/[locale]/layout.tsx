@@ -10,6 +10,7 @@ import type { Locale } from "@/types/locale";
 
 import "@/app/globals.css";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: "Sadaf Nemani",
@@ -43,6 +44,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
