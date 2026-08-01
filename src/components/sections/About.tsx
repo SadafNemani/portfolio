@@ -17,10 +17,10 @@ export default async function About() {
   const t = await getTranslations("about");
 
   return (
-    <Section id="about" className="relative flex min-h-dvh flex-col overflow-hidden py-0">
+    <Section id="about" className="relative flex min-h-dvh flex-col overflow-hidden">
       <BackgroundHalos />
 
-      <Container className="relative mx-auto grid w-full flex-1 grid-cols-3 items-center gap-5 py-32 sm:gap-6 sm:py-36">
+      <Container className="relative grid flex-1 grid-cols-3 items-center gap-5 py-32 sm:gap-6 sm:py-36">
         <SectionHeader className="items-start">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
