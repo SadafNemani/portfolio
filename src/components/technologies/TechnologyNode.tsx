@@ -14,7 +14,7 @@ export default function TechnologyNode({ technology, className, ...props }: Tech
   return (
     <div
       className={cn(
-        "rounded-button border-border bg-glass shadow-card flex h-13 w-fit items-center gap-2.5 border px-4.5 py-3 backdrop-blur-2xl",
+        "rounded-pill border-border bg-glass shadow-card flex h-13 w-fit items-center gap-2.5 border px-4.5 py-3 backdrop-blur-2xl",
         className
       )}
       {...props}

@@ -56,14 +56,14 @@
 
   "technologies": {
     "sectionTitle": "TECHNOLOGIES",
-    "title": "Technologies I Work With.",
+    "title": "Technologies <br></br><gradient>I Work With</gradient><accent>.</accent>",
     "subtitle": "The technologies I use to build beautiful digital experiences.",
 
     "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "cms": "CMS",
-      "design": "Design"
+      "frontend": "<accent>✦</accent> Frontend",
+      "backend": "<accent>⬣</accent> Backend",
+      "cms": "<accent>◈</accent> CMS",
+      "design": "<accent>⬢</accent> Design"
     }
   },
 
