@@ -11,8 +11,6 @@
     "sectionTitle": "FRONTEND DEVELOPER",
     "title": "I Build Websites People <gradient>Remember</gradient><accent>.</accent>",
     "subtitle": "Frontend Developer crafting premium digital experiences with React, Next.js and WordPress",
-    "codeTextTitle": "myQualities.ts",
-    "codeText": "const principles = [\n“Performance first”,\n“Pixel perfect”,\n“Accessibility”,\n“Meaningful motion”,\n];",
     "primaryButton": "View my work",
     "secondaryButton": "Let's talk",
     "scrollIndicator": "Scroll to explore"
@@ -20,7 +18,7 @@
 
   "about": {
     "sectionTitle": "ABOUT ME",
-    "title": "I'm Sadaf Nemani, a passionate Frontend Developer.",
+    "title": "I'm Sadaf Nemani,<br></br>a passionate <gradient>Frontend Developer</gradient><accent>.</accent>",
     "subtitle": "I'm a Front-End Developer with a background in WordPress development and a growing passion for React and Next.js",
 
     "downloadCV": "Download My CV",
@@ -30,6 +28,8 @@
       "experience": "Experience",
       "clients": "Clients"
     },
+
+    "imageAlt": "Sadaf Nemani Frontend Developer portrait",
 
     "characteristics": {
       "attentionToDetail": {

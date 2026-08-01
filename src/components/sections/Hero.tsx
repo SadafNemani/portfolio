@@ -11,6 +11,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import SecondaryButton from "@/components/ui/SecondaryButton";
 import { richText } from "@/lib/richText";
+import SectionHeader from "../layout/SectionHeader";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -21,7 +22,7 @@ export default async function Hero() {
 
       <Container className="relative flex flex-1 flex-col">
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-32 text-center sm:gap-12 sm:py-36">
-          <div className="flex flex-col items-center gap-6">
+          <SectionHeader className="items-center">
             <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
             <SectionHeading className="text-hero-title! max-w-[18ch]">
@@ -29,7 +30,7 @@ export default async function Hero() {
             </SectionHeading>
 
             <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
-          </div>
+          </SectionHeader>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <PrimaryButton type="button">{t("primaryButton")}</PrimaryButton>

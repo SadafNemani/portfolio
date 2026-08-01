@@ -18,7 +18,7 @@ export default function StatisticCard({ statistic, className, ...props }: Statis
 
   return (
     <GlassCard
-      className={cn("flex flex-col items-center justify-center gap-2.5", className)}
+      className={cn("flex flex-col items-center justify-center gap-2.5 p-4", className)}
       {...props}
     >
       <p className="text-emerald-light text-statistic font-extrabold">{statistic.value}</p>

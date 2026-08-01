@@ -5,4 +5,6 @@ export const richText = {
   gradient: (chunks: React.ReactNode) => <GradientText>{chunks}</GradientText>,
 
   accent: (chunks: React.ReactNode) => <AccentText>{chunks}</AccentText>,
+
+  br: () => <br />,
 };
