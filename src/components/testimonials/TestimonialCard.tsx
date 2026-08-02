@@ -1,24 +1,20 @@
-import { getTranslations } from "next-intl/server";
-
 import { cn } from "@/lib/utils";
 
-import { Testimonial } from "@/types/testimonials";
+import { TestimonialContent } from "@/types/testimonials";
 
 import GlassCard from "../ui/GlassCard";
 
 import { Star } from "lucide-react";
 
 interface TestimonialCardProps extends React.ComponentProps<typeof GlassCard> {
-  testimonial: Testimonial;
+  testimonial: TestimonialContent;
 }
 
-export default async function TestimonialCard({
+export default function TestimonialCard({
   testimonial,
   className,
   ...props
 }: TestimonialCardProps) {
-  const t = await getTranslations("testimonials.items");
-
   return (
     <GlassCard className={cn("flex flex-col items-start gap-6 p-7", className)} {...props}>
       <div className="flex gap-1">
@@ -31,11 +27,11 @@ export default async function TestimonialCard({
         ))}
       </div>
       <p className="text-text-primary text-section-description leading-[170%] font-medium tracking-[-0.03em]">
-        {t(`${testimonial.slug}.review`)}
+        {testimonial.review}
       </p>
       <span className="border-border border-b-2"></span>
       <span className="text-body leading-[170%] font-semibold tracking-[-0.03em]">
-        {t(`${testimonial.slug}.name`)}
+        {testimonial.name}
       </span>
     </GlassCard>
   );

@@ -85,12 +85,16 @@
 
   "testimonials": {
     "sectionTitle": "TESTIMONIALS",
-    "title": "People I've Worked With.",
+    "title": "People I've <gradient>Worked With</gradient><accent>.</accent>",
     "subtitle": "Real feedback from people I've worked with on freelance projects.",
 
     "items": {
       "client1": {
         "name": "Naif Al-Faqeeh",
+        "review": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus."
+      },
+      "client2": {
+        "name": "Hisham Karman",
         "review": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus."
       }
     }
