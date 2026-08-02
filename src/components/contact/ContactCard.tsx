@@ -7,6 +7,7 @@ import GlassCard from "../ui/GlassCard";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import PrimaryButton from "../ui/PrimaryButton";
+import { richText } from "@/lib/richText";
 
 type ContactCardProps = React.ComponentProps<typeof GlassCard>;
 
@@ -17,7 +18,7 @@ export default async function ContactCard({ className, ...props }: ContactCardPr
     <GlassCard className={cn("flex flex-col gap-6 p-5", className)} {...props}>
       <div className="flex items-start justify-end">
         <div className="text-emerald-light text-section-label font-medium whitespace-pre-line">
-          {t("contactDetail")}
+          {t.rich("contactDetail", richText)}
         </div>
       </div>
       <form className="flex flex-col gap-6">

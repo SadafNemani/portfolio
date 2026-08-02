@@ -20,7 +20,7 @@ export default async function Footer() {
       <BackgroundHalos />
 
       <Container>
-        <div className="backdrop-blur-3xl">
+        <div className="py-6 backdrop-blur-3xl">
           <div className="via-emerald-light mb-6 h-px w-full bg-linear-to-r from-transparent to-transparent" />
 
           <div className="flex justify-between py-2.5">

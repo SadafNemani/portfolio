@@ -98,8 +98,8 @@
 
   "contact": {
     "sectionTitle": "LET'S WORK TOGETHER",
-    "title": "Have an idea? Let's build something remarkable.",
-    "contactDetail": "Usually replies within 24 hours\nOpen to freelance projects",
+    "title": "Have an <gradient>idea</gradient><accent>?</accent><br></br> Let's build something <gradient>remarkable</gradient><accent>.</accent>",
+    "contactDetail": "Usually replies within 24 hours<br></br>Open to freelance projects",
 
     "namePlaceholder": "Your Name...",
     "emailPlaceholder": "Your Email...",
