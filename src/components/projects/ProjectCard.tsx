@@ -1,9 +1,7 @@
-import { getTranslations } from "next-intl/server";
-
 import { cn } from "@/lib/utils";
 
 import GlassCard from "../ui/GlassCard";
-import { Project } from "@/types/projects";
+import { ProjectContent } from "@/types/projects";
 import TechnologyNode from "../technologies/TechnologyNode";
 
 import { getTechnology } from "@/lib/getTechnology";
@@ -13,26 +11,24 @@ import SecondaryButton from "../ui/SecondaryButton";
 import Image from "next/image";
 
 interface ProjectCardProps extends React.ComponentProps<typeof GlassCard> {
-  project: Project;
+  project: ProjectContent;
+  labels: {
+    liveButton: string;
+    githubButton: string;
+  };
 }
 
-export default async function ProjectCard({ project, className, ...props }: ProjectCardProps) {
-  const t = await getTranslations("projects.items");
-
+export default function ProjectCard({ project, labels, className, ...props }: ProjectCardProps) {
   return (
     <GlassCard className={cn("flex gap-10 p-5", className)} {...props}>
       <div className="flex flex-1 flex-col gap-8">
         <span className="text-emerald-light text-section-description font-medium">
-          {t(`${project.slug}.category`)}
+          {project.category}
         </span>
 
-        <h3 className="text-text-primary text-project-title font-bold">
-          {t(`${project.slug}.title`)}
-        </h3>
+        <h3 className="text-text-primary text-project-title font-bold">{project.title}</h3>
 
-        <p className="text-text-secondary text-body font-medium">
-          {t(`${project.slug}.description`)}
-        </p>
+        <p className="text-text-secondary text-body font-medium">{project.description}</p>
 
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((technologyId) => {
@@ -50,9 +46,9 @@ export default async function ProjectCard({ project, className, ...props }: Proj
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={t("liveButton")}
+              aria-label={labels.liveButton}
             >
-              <PrimaryButton type="button">{t("liveButton")}</PrimaryButton>
+              <PrimaryButton type="button">{labels.liveButton}</PrimaryButton>
             </a>
           )}
 
@@ -61,9 +57,9 @@ export default async function ProjectCard({ project, className, ...props }: Proj
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={t("githubButton")}
+              aria-label={labels.githubButton}
             >
-              <SecondaryButton type="button">{t("githubButton")}</SecondaryButton>
+              <SecondaryButton type="button">{labels.githubButton}</SecondaryButton>
             </a>
           )}
         </div>
@@ -72,7 +68,7 @@ export default async function ProjectCard({ project, className, ...props }: Proj
       <div className="bg-glass rounded-card shadow-button relative h-full flex-1 overflow-hidden px-6 py-2.5 backdrop-blur-2xl">
         <Image
           src={project.thumbnail}
-          alt={t(`${project.slug}.title`)}
+          alt={project.title}
           width={700}
           height={500}
           className="rounded-card h-full w-full object-cover"

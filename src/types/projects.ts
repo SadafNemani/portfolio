@@ -10,3 +10,9 @@ export interface Project {
   featured: boolean;
   order: number;
 }
+
+export interface ProjectContent extends Project {
+  title: string;
+  category: string;
+  description: string;
+}
