@@ -20,8 +20,14 @@ interface ProjectCardProps extends React.ComponentProps<typeof GlassCard> {
 
 export default function ProjectCard({ project, labels, className, ...props }: ProjectCardProps) {
   return (
-    <GlassCard className={cn("flex gap-10 p-5", className)} {...props}>
-      <div className="flex flex-1 flex-col gap-8">
+    <GlassCard
+      className={cn(
+        "flex h-full min-h-0 flex-col gap-6 overflow-y-auto p-5 lg:flex-row lg:gap-10",
+        className
+      )}
+      {...props}
+    >
+      <div className="flex flex-1 flex-col gap-4 lg:gap-8">
         <span className="text-emerald-light text-section-description font-medium">
           {project.category}
         </span>
@@ -33,9 +39,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((technologyId) => {
             const technology = getTechnology(technologyId);
-
             if (!technology) return null;
-
             return <TechnologyNode key={technology.id} technology={technology} />;
           })}
         </div>
@@ -51,7 +55,6 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
               <PrimaryButton type="button">{labels.liveButton}</PrimaryButton>
             </a>
           )}
-
           {project.github && (
             <a
               href={project.github}
@@ -65,7 +68,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
         </div>
       </div>
 
-      <div className="bg-glass rounded-card shadow-button relative h-full flex-1 overflow-hidden px-6 py-2.5 backdrop-blur-2xl">
+      <div className="bg-glass rounded-card shadow-button relative h-40 shrink-0 overflow-hidden px-6 py-2.5 backdrop-blur-2xl lg:h-full lg:flex-1">
         <Image
           src={project.thumbnail}
           alt={project.title}

@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
@@ -29,23 +28,16 @@ export default async function Projects() {
     <Section id="projects" className="relative">
       <BackgroundHalos />
 
-      <div className="relative h-[400vh]">
-        <div className="sticky top-0 h-dvh">
-          <Container className="flex h-full flex-col py-32 sm:py-36">
-            <SectionHeader className="items-start justify-center">
-              <SectionLabel>{t("sectionTitle")}</SectionLabel>
-
-              <SectionHeading className="leading-[105%]">
-                {t.rich("title", richText)}
-              </SectionHeading>
-            </SectionHeader>
-
-            <div className="relative mt-7.5 flex-1">
-              <ProjectShowcase projects={translatedProjects} labels={projectLabels} />
-            </div>
-          </Container>
-        </div>
-      </div>
+      <ProjectShowcase
+        projects={translatedProjects}
+        labels={projectLabels}
+        heading={
+          <SectionHeader className="items-start justify-center">
+            <SectionLabel>{t("sectionTitle")}</SectionLabel>
+            <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+          </SectionHeader>
+        }
+      />
     </Section>
   );
 }

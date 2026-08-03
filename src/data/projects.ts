@@ -10,4 +10,13 @@ export const projects: Project[] = [
     featured: true,
     order: 1,
   },
+  {
+    slug: "saas",
+    technologies: ["nextjs", "typescript", "tailwind"],
+    thumbnail: "/images/projects/saas.webp",
+    github: "https://github.com/...",
+    live: "https://...",
+    featured: true,
+    order: 1,
+  },
 ];

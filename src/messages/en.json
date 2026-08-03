@@ -69,12 +69,17 @@
 
   "projects": {
     "sectionTitle": "PROJECTS",
-    "title": "My Selected <br></br><gradient>Works</gradient><accent>.</accent>",
+    "title": "My Selected <gradient>Works</gradient><accent>.</accent>",
 
     "items": {
       "portfolio": {
         "title": "Personal Portfolio",
         "category": "Branding Website",
+        "description": "A modern multilingual portfolio built with Next.js and TypeScript."
+      },
+      "saas": {
+        "title": "SaaS",
+        "category": "SaaS Website",
         "description": "A modern multilingual portfolio built with Next.js and TypeScript."
       },
       "liveButton": "See Live",
