@@ -125,7 +125,7 @@ function PaginationNumber({ value }: { value: number }) {
           className="text-text-primary absolute right-0 leading-none font-extrabold opacity-[0.12]"
           style={{
             fontSize: "clamp(160px, 20vw, 300px)",
-            top: "-0.18em", // pulls the glyph up to cancel the font's built-in top whitespace
+            top: "-0.18em",
             transformOrigin: "center",
           }}
         >
