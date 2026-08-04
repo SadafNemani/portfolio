@@ -9,7 +9,7 @@
 
   "hero": {
     "sectionTitle": "مطوّرة واجهات أمامية",
-    "title": "<gradient>حس تصميمي</gradient><accent>.</accent> مهارات برمجية<accent>.</accent>",
+    "title": "<gradient>حس تصميمي</gradient><accent>.</accent><br></br>مهارات برمجية<accent>.</accent>",
     "subtitle": "أصمم وأطوّر مواقع أنيقة وعملية، تجمع بين سنوات من الخبرة في التصميم البصري وحِرفية تطوير الواجهات الأمامية الحديثة.",
     "primaryButton": "شاهد أعمالي",
     "secondaryButton": "لنعمل معًا",

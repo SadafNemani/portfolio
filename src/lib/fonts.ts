@@ -1,6 +1,4 @@
-import { Montserrat } from "next/font/google";
-import localFont from "next/font/local";
-import path from "path";
+import { Montserrat, IBM_Plex_Sans_Arabic } from "next/font/google";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
@@ -9,24 +7,9 @@ export const montserrat = Montserrat({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-export const anjoman = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Anjoman/Anjoman-Light.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Anjoman/Anjoman-Regular.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Anjoman/Anjoman-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+export const ibmPlex = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
   display: "swap",
-  variable: "--font-anjoman",
+  variable: "--font-ibmPlex",
+  weight: ["300", "400", "500", "600", "700"],
 });

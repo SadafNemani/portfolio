@@ -4,7 +4,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
-import { montserrat, anjoman } from "@/lib/fonts";
+import { montserrat, ibmPlex } from "@/lib/fonts";
 
 import type { Locale } from "@/types/locale";
 
@@ -37,7 +37,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       dir={isRTL ? "rtl" : "ltr"}
-      className={`${montserrat.variable} ${anjoman.variable}`}
+      className={`${montserrat.variable} ${ibmPlex.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased">
