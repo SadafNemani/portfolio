@@ -18,7 +18,7 @@
 
   "about": {
     "sectionTitle": "ABOUT ME",
-    "title": "<gradient>I'm Sadaf</gradient> — this is where it started<accent>.</accent>",
+    "title": "<gradient>I'm Sadaf</gradient><br></br>This is where it started<accent>.</accent>",
     "subtitle": "I didn't start with code. I started with design — learning layout, hierarchy, and user experience through years of visual design and WordPress work. That instinct is still at the core of what I build, now powered by React, Next.js, TypeScript, and Tailwind CSS. The result: websites that don't just work, they feel right.",
 
     "imageAlt": "Sadaf Nemani Frontend Developer portrait",
