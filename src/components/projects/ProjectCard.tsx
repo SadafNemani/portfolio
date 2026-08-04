@@ -40,7 +40,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
           {project.technologies.map((technologyId) => {
             const technology = getTechnology(technologyId);
             if (!technology) return null;
-            return <TechnologyNode key={technology.id} technology={technology} />;
+            return <TechnologyNode key={technology.id} technology={technology} size="sm" />;
           })}
         </div>
 
