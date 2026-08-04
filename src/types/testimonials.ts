@@ -6,4 +6,5 @@ export interface Testimonial {
 export interface TestimonialContent extends Testimonial {
   name: string;
   review: string;
+  workType: string;
 }

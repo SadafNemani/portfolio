@@ -9,4 +9,8 @@ export const testimonials: Testimonial[] = [
     slug: "client2",
     stars: 5,
   },
+  {
+    slug: "client3",
+    stars: 5,
+  },
 ];

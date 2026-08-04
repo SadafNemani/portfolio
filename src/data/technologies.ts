@@ -34,6 +34,12 @@ export const technologies: Technology[] = [
     logo: "/logos/tailwind.svg",
     category: "frontend",
   },
+  {
+    id: "framer",
+    name: "Framer Motion",
+    logo: "/logos/framer.svg",
+    category: "frontend",
+  },
 
   // backend technologies
   {

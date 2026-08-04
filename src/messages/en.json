@@ -13,7 +13,7 @@
     "subtitle": "I create polished, purposeful websites that look great and work beautifully — combining years of visual design experience with modern frontend craft.",
     "primaryButton": "View my work",
     "secondaryButton": "Let's work together",
-    "scrollIndicator": "Explore"
+    "scrollIndicator": "Scroll to Explore"
   },
 
   "about": {
@@ -24,19 +24,19 @@
     "imageAlt": "Sadaf Nemani Frontend Developer portrait",
 
     "characteristics": {
-      "attentionToDetail": {
-        "title": "Attention to Detail",
-        "subtitle": "Every interaction is crafted with care, from typography to performance."
+      "designDriven": {
+        "title": "Design-Driven",
+        "subtitle": "I approach every build with a designer's eye for detail, spacing, and visual hierarchy."
       },
 
-      "problemSolver": {
-        "title": "Problem Solver",
-        "subtitle": "Turning complex challenges into simple digital experiences."
+      "detailOriented": {
+        "title": "Detail-Oriented",
+        "subtitle": "Clean component architecture and pixel-level polish, not just working code."
       },
 
-      "continuousLearner": {
-        "title": "Continuous Learner",
-        "subtitle": "Always exploring modern technologies and improving every day."
+      "alwaysGrowing": {
+        "title": "Always Growing",
+        "subtitle": "Deepening my technical skills — from WordPress to React and Next.js, and beyond."
       },
 
       "reliable": {
@@ -48,8 +48,8 @@
 
   "technologies": {
     "sectionTitle": "TECHNOLOGIES",
-    "title": "Technologies <br></br><gradient>I Work With</gradient><accent>.</accent>",
-    "subtitle": "The technologies I use to build beautiful digital experiences.",
+    "title": "Tools <br></br><gradient>I build with</gradient><accent>.</accent>",
+    "subtitle": "A blend of design-rooted and modern development tools I use to bring ideas to life.",
 
     "categories": {
       "frontend": "<accent>✦</accent> Frontend",
@@ -61,7 +61,7 @@
 
   "projects": {
     "sectionTitle": "PROJECTS",
-    "title": "My Selected <gradient>Works</gradient><accent>.</accent>",
+    "title": "My selected <gradient>works</gradient><accent>.</accent>",
 
     "items": {
       "portfolio": {
@@ -81,24 +81,31 @@
 
   "testimonials": {
     "sectionTitle": "TESTIMONIALS",
-    "title": "People I've <gradient>Worked With</gradient><accent>.</accent>",
-    "subtitle": "Real feedback from people I've worked with on freelance projects.",
+    "title": "What people say about <gradient>working with me</gradient><accent>.</accent>",
+    "subtitle": "Feedback from clients and collaborators I've had the chance to build with.",
 
     "items": {
       "client1": {
-        "name": "Naif Al-Faqeeh",
-        "review": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus."
+        "name": "Nayif A.",
+        "review": "If you want speed and quality together, work with engineer Sadaf. My experience with her has been excellent — professional, reliable, and genuinely impressive. I recommend her without hesitation.",
+        "workType": "— WordPress Design & Development"
       },
       "client2": {
-        "name": "Hisham Karman",
-        "review": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus."
+        "name": "Samer K.",
+        "review": "Sadaf is one of the best freelancers you can rely on for website design. Precise work, delivered on time. I recommend working with her with full confidence.",
+        "workType": "— Website Edits & Development"
+      },
+      "client3": {
+        "name": "Hisham K.",
+        "review": "She's diligent, hardworking, and genuinely dedicated to her work. I'd be glad to work with her again.",
+        "workType": "— WordPress Development"
       }
     }
   },
 
   "contact": {
-    "sectionTitle": "LET'S WORK TOGETHER",
-    "title": "Have an <gradient>idea</gradient><accent>?</accent><br></br> Let's build something <gradient>remarkable</gradient><accent>.</accent>",
+    "sectionTitle": "Contact",
+    "title": "Let's build something <gradient>together</gradient><accent>.</accent>",
     "contactDetail": "Usually replies within 24 hours<br></br>Open to freelance projects",
 
     "namePlaceholder": "Your Name...",
@@ -113,6 +120,6 @@
     "myName": "Sadaf Nemani",
     "mySpecialty": "Frontend Developer",
     "copyright": "© 2026 Sadaf Nemani",
-    "footerDetails": "Designed & Developed using Next.js,<br></br>Built with curiosity, patience, and a love for beautiful web experiences"
+    "footerDetails": "Designed & built with Next.js — and a love for good design."
   }
 }

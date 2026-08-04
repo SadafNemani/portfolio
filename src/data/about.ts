@@ -3,15 +3,15 @@ import { BadgeCheck, BookOpen, Puzzle, Sparkles } from "lucide-react";
 
 export const characteristics: Characteristic[] = [
   {
-    key: "attentionToDetail",
+    key: "designDriven",
     icon: Sparkles,
   },
   {
-    key: "problemSolver",
+    key: "detailOriented",
     icon: Puzzle,
   },
   {
-    key: "continuousLearner",
+    key: "alwaysGrowing",
     icon: BookOpen,
   },
   {

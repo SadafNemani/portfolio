@@ -30,9 +30,14 @@ export default function TestimonialCard({
         {testimonial.review}
       </p>
       <span className="border-border border-b-2"></span>
-      <span className="text-body leading-[170%] font-semibold tracking-[-0.03em]">
-        {testimonial.name}
-      </span>
+      <div className="flex flex-col">
+        <span className="text-body leading-[170%] font-semibold tracking-[-0.03em]">
+          {testimonial.name}
+        </span>
+        <span className="font-regular text-text-secondary text-[14px] leading-[170%] tracking-[-0.03em]">
+          {testimonial.workType}
+        </span>
+      </div>
     </GlassCard>
   );
 }

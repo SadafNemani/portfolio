@@ -19,6 +19,7 @@ export default async function Testimonials() {
     ...testimonial,
     name: t(`items.${testimonial.slug}.name`),
     review: t(`items.${testimonial.slug}.review`),
+    workType: t(`items.${testimonial.slug}.workType`),
   }));
 
   return (
