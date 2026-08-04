@@ -35,7 +35,7 @@
 
   /* Fonts */
   --font-sans: var(--font-montserrat);
-  --font-rtl: var(--font-anjoman);
+  --font-rtl: var(--font-ibmPlex);
 
   /* Font Size */
   --text-section-heading: 56px;
