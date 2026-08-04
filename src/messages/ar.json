@@ -1,0 +1,125 @@
+{
+  "navigation": {
+    "about": "نبذة عني",
+    "technologies": "التقنيات",
+    "projects": "المشاريع",
+    "testimonials": "آراء العملاء",
+    "contact": "تواصل معي"
+  },
+
+  "hero": {
+    "sectionTitle": "مطوّرة واجهات أمامية",
+    "title": "<gradient>حس تصميمي</gradient><accent>.</accent> مهارات برمجية<accent>.</accent>",
+    "subtitle": "أصمم وأطوّر مواقع أنيقة وعملية، تجمع بين سنوات من الخبرة في التصميم البصري وحِرفية تطوير الواجهات الأمامية الحديثة.",
+    "primaryButton": "شاهد أعمالي",
+    "secondaryButton": "لنعمل معًا",
+    "scrollIndicator": "مرري للأسفل"
+  },
+
+  "about": {
+    "sectionTitle": "نبذة عني",
+    "title": "<gradient>أنا صدف</gradient><br></br>من هنا بدأت القصة<accent>.</accent>",
+    "subtitle": "لم أبدأ بالبرمجة، بل بدأت بالتصميم — تعلمت التخطيط والتسلسل الهرمي وتجربة المستخدم خلال سنوات من العمل في التصميم البصري ووردبريس. هذا الحس ما زال أساس كل ما أبنيه، مدعومًا اليوم بـ React وNext.js وTypeScript وTailwind CSS. والنتيجة: مواقع لا تعمل بكفاءة فحسب، بل تُبنى بإحساس صحيح.",
+
+    "imageAlt": "صورة شخصية لصدف نعماني، مطوّرة واجهات أمامية",
+
+    "characteristics": {
+      "designDriven": {
+        "title": "دقة تصميمية",
+        "subtitle": "أتعامل مع كل مشروع بعين مصمم تهتم بالتفاصيل والمسافات والتسلسل البصري."
+      },
+
+      "detailOriented": {
+        "title": "اهتمام بالتفاصيل",
+        "subtitle": "بنية مكوّنات نظيفة ودقة في التفاصيل، لا مجرد كود يعمل."
+      },
+
+      "alwaysGrowing": {
+        "title": "تطوّر مستمر",
+        "subtitle": "أعمّق مهاراتي التقنية باستمرار — من وردبريس إلى React وNext.js وما بعدها."
+      },
+
+      "reliable": {
+        "title": "موثوقية",
+        "subtitle": "التواصل والمسؤولية والالتزام بالمواعيد أمور أساسية بالنسبة لي."
+      }
+    }
+  },
+
+  "technologies": {
+    "sectionTitle": "التقنيات",
+    "title": "الأدوات <br></br><gradient>التي أعمل بها</gradient><accent>.</accent>",
+    "subtitle": "مزيج من أدوات تصميمية وتقنيات تطوير حديثة أستخدمها لتحويل الأفكار إلى واقع.",
+
+    "categories": {
+      "frontend": "<accent>✦</accent> الواجهة الأمامية",
+      "backend": "<accent>⬣</accent> الواجهة الخلفية",
+      "cms": "<accent>◈</accent> أنظمة إدارة المحتوى",
+      "design": "<accent>⬢</accent> التصميم"
+    }
+  },
+
+  "projects": {
+    "sectionTitle": "المشاريع",
+    "title": "أبرز <gradient>أعمالي</gradient><accent>.</accent>",
+
+    "items": {
+      "portfolio": {
+        "title": "الموقع الشخصي",
+        "category": "موقع تعريفي",
+        "description": "موقع شخصي متعدد اللغات مبني باستخدام Next.js وTypeScript."
+      },
+      "saas": {
+        "title": "SaaS",
+        "category": "موقع SaaS",
+        "description": "موقع شخصي متعدد اللغات مبني باستخدام Next.js وTypeScript."
+      },
+      "liveButton": "معاينة الموقع",
+      "githubButton": "الكود المصدري"
+    }
+  },
+
+  "testimonials": {
+    "sectionTitle": "آراء العملاء",
+    "title": "ماذا يقول من <gradient>عملوا معي</gradient><accent>.</accent>",
+    "subtitle": "آراء من عملاء وشركاء عمل أتيحت لي فرصة التعاون معهم.",
+
+    "items": {
+      "client1": {
+        "name": "نايف أ.",
+        "review": "من يريد أن يجمع بين السرعة والجودة، فليتعاقد مع المهندسة صدف. تجربتي معها كانت ممتازة — احترافية، موثوقية، وانطباع رائع حقًا. أنصح بالتعامل معها دون أي تردد.",
+        "workType": "— تصميم وتطوير موقع وردبريس"
+      },
+      "client2": {
+        "name": "سامر ك.",
+        "review": "مهندسة صدف من أفضل المستقلين اللي تقدر تعتمد عليهم لتصميم موقعك الإلكتروني. دقة في العمل وتسليم في الموعد. أنصح بالتعامل معها بكل ثقة.",
+        "workType": "— تعديلات وتطوير موقع"
+      },
+      "client3": {
+        "name": "هشام ك.",
+        "review": "دؤوبة، مجتهدة، ومخلصة في عملها. يسعدني التعامل معها مرة أخرى.",
+        "workType": "— تطوير وردبريس"
+      }
+    }
+  },
+
+  "contact": {
+    "sectionTitle": "تواصل معي",
+    "title": "لنبني شيئًا <gradient>معًا</gradient><accent>.</accent>",
+    "contactDetail": "عادةً أرد خلال 24 ساعة<br></br>متاحة لمشاريع العمل الحر",
+
+    "namePlaceholder": "اسمك...",
+    "emailPlaceholder": "بريدك الإلكتروني...",
+    "subjectPlaceholder": "الموضوع...",
+    "messagePlaceholder": "رسالتك...",
+
+    "sendButton": "إرسال الرسالة"
+  },
+
+  "footer": {
+    "myName": "صدف نعماني",
+    "mySpecialty": "مطوّرة واجهات أمامية",
+    "copyright": "© 2026 صدف نعماني",
+    "footerDetails": "صُمم وطُوّر باستخدام Next.js — بشغف للتصميم الجميل."
+  }
+}

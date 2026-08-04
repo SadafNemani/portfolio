@@ -11,7 +11,7 @@ export const languages: Language[] = [
     label: "EN",
   },
   {
-    code: "fa",
-    label: "فا",
+    code: "ar",
+    label: "عربي",
   },
 ];

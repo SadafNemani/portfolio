@@ -31,7 +31,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
-  const isRTL = locale === "fa";
+  const isRTL = locale === "ar";
 
   return (
     <html
