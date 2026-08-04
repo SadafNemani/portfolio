@@ -9,10 +9,11 @@ import { montserrat, ibmPlex } from "@/lib/fonts";
 import type { Locale } from "@/types/locale";
 
 import "@/app/globals.css";
+import PersonJsonLd from "@/components/seo/PersonJsonLd";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/sections/Footer";
 
-const siteUrl = "https://yoursite.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
 
 type Props = {
   children: React.ReactNode;
@@ -85,6 +86,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="antialiased">
+        <PersonJsonLd />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
