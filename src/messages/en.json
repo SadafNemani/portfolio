@@ -9,17 +9,17 @@
 
   "hero": {
     "sectionTitle": "FRONTEND DEVELOPER",
-    "title": "I Build Websites People <gradient>Remember</gradient><accent>.</accent>",
-    "subtitle": "Frontend Developer crafting premium digital experiences with React, Next.js and WordPress",
+    "title": "<gradient>Design instincts</gradient><accent>.</accent> Developer skills<accent>.</accent>",
+    "subtitle": "I create polished, purposeful websites that look great and work beautifully — combining years of visual design experience with modern frontend craft.",
     "primaryButton": "View my work",
-    "secondaryButton": "Let's talk",
-    "scrollIndicator": "Scroll to explore"
+    "secondaryButton": "Let's work together",
+    "scrollIndicator": "Explore"
   },
 
   "about": {
     "sectionTitle": "ABOUT ME",
-    "title": "I'm Sadaf Nemani,<br></br>a passionate <gradient>Frontend Developer</gradient><accent>.</accent>",
-    "subtitle": "I'm a Front-End Developer with a background in WordPress development and a growing passion for React and Next.js",
+    "title": "<gradient>I'm Sadaf</gradient> — this is where it started<accent>.</accent>",
+    "subtitle": "I didn't start with code. I started with design — learning layout, hierarchy, and user experience through years of visual design and WordPress work. That instinct is still at the core of what I build, now powered by React, Next.js, TypeScript, and Tailwind CSS. The result: websites that don't just work, they feel right.",
 
     "downloadCV": "Download My CV",
 
