@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Sadaf Nemani | Frontend Developer & Web Designer",
+    "description": "Frontend developer specializing in React, Next.js, and modern web design. I build polished, purposeful websites — landing pages, business sites, and redesigns."
+  },
+
   "navigation": {
     "about": "About",
     "technologies": "Technologies",

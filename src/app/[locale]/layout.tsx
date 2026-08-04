@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
@@ -12,15 +12,59 @@ import "@/app/globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/sections/Footer";
 
-export const metadata: Metadata = {
-  title: "Sadaf Nemani",
-  description: "Portfolio Website",
-};
+const siteUrl = "https://yoursite.com";
 
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+
+  const title = t("title");
+  const description = t("description");
+
+  return {
+    title,
+    description,
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        en: `${siteUrl}/en`,
+        ar: `${siteUrl}/ar`,
+        "x-default": `${siteUrl}/en`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/${locale}`,
+      siteName: "Sadaf Nemani",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: locale === "ar" ? "ar_SA" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-image.png"],
+    },
+  };
+}
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
