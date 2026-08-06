@@ -23,7 +23,7 @@ export default async function Footer() {
         <div className="py-6 backdrop-blur-3xl">
           <div className="via-emerald-light mb-6 h-px w-full bg-linear-to-r from-transparent to-transparent" />
 
-          <div className="flex justify-between py-2.5">
+          <div className="flex flex-col items-center gap-6 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             <div className="flex gap-2.5">
               <Image
                 src="/logos/SadafLogo.svg"
@@ -42,7 +42,7 @@ export default async function Footer() {
               </div>
             </div>
 
-            <nav className="flex items-center justify-center gap-7 px-4">
+            <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 px-4">
               {NAVIGATION_ITEMS.map((item) => (
                 <a
                   key={item}
@@ -79,7 +79,7 @@ export default async function Footer() {
 
           <div className="via-emerald-light/10 my-2.5 mb-6 h-px w-full bg-linear-to-r from-transparent to-transparent" />
 
-          <div className="text-text-secondary/50 flex items-center justify-between py-2.5 text-[15px] font-medium">
+          <div className="text-text-secondary/50 flex flex-col items-center gap-2 py-2.5 text-center text-[15px] font-medium sm:flex-row sm:justify-between sm:text-left">
             <span>{t.rich("footer.footerDetails", richText)}</span>
             <span>{t("footer.copyright")}</span>
           </div>

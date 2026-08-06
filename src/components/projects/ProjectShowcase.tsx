@@ -61,7 +61,7 @@ export default function ProjectShowcase({ projects, labels, heading }: ProjectSh
           <div className="relative z-10 mt-7.5 min-h-0 overflow-hidden">
             <div
               className="relative mx-auto w-full max-w-300"
-              style={{ height: "clamp(380px, 52vh, 560px)" }}
+              style={{ height: "clamp(460px, 62dvh, 560px)" }}
             >
               {projects.map((project, index) => (
                 <StackedCard
@@ -122,9 +122,9 @@ function PaginationNumber({ value }: { value: number }) {
           animate={{ rotateX: 0, opacity: 1 }}
           exit={{ rotateX: -90, opacity: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="text-text-primary absolute right-0 leading-none font-extrabold opacity-[0.12]"
+          className="text-text-primary absolute end-0 leading-none font-extrabold opacity-[0.12]"
           style={{
-            fontSize: "clamp(160px, 20vw, 300px)",
+            fontSize: "clamp(90px, 20vw, 300px)",
             top: "-0.18em",
             transformOrigin: "center",
           }}

@@ -33,7 +33,10 @@ export default async function Testimonials() {
           <SectionHeading>{t.rich("title", richText)}</SectionHeading>
 
           <div className="flex items-baseline-last gap-2.5">
-            <QuoteIcon className="text-emerald/50 size-25 fill-current" strokeWidth={0} />
+            <QuoteIcon
+              className="text-emerald/50 size-14 fill-current sm:size-20 lg:size-25"
+              strokeWidth={0}
+            />
             <SectionDescription>{t("subtitle")}</SectionDescription>
           </div>
         </SectionHeader>

@@ -26,7 +26,7 @@ export default async function Contact() {
 
           <SectionHeading>{t.rich("title", richText)}</SectionHeading>
 
-          <div className="mt-10 flex gap-2.5">
+          <div className="mt-10 flex flex-wrap gap-2.5">
             {socials.map((social) => {
               const Icon = social.lucideIcon;
               const label = tSocials(social.id);

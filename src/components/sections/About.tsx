@@ -27,13 +27,13 @@ export default async function About() {
 
           <SectionDescription>{t("subtitle")}</SectionDescription>
 
-          <div className="grid w-full grid-cols-2 gap-6">
+          <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
             {characteristics.map((characteristic) => (
               <CharacteristicCard key={characteristic.key} characteristic={characteristic} />
             ))}
           </div>
         </SectionHeader>
-        <div className="rounded-card border-border relative h-130 w-full overflow-hidden border">
+        <div className="rounded-card border-border relative h-80 w-full overflow-hidden border sm:h-96 lg:h-130">
           <Image
             src="/images/sadaf_nemani.jpg"
             alt={t("imageAlt")}
