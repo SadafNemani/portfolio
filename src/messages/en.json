@@ -9,7 +9,9 @@
     "technologies": "Technologies",
     "projects": "Projects",
     "testimonials": "Testimonials",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
 
   "hero": {

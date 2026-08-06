@@ -9,7 +9,9 @@
     "technologies": "التقنيات",
     "projects": "المشاريع",
     "testimonials": "آراء العملاء",
-    "contact": "تواصل معي"
+    "contact": "تواصل معي",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة"
   },
 
   "hero": {
