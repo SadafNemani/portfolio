@@ -22,7 +22,7 @@ export default async function Technologies() {
         <SectionHeader className="items-start justify-center">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
-          <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+          <SectionHeading>{t.rich("title", richText)}</SectionHeading>
 
           <SectionDescription>{t("subtitle")}</SectionDescription>
         </SectionHeader>

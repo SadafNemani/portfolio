@@ -10,7 +10,7 @@ export default function SectionHeading({ children, className, ...props }: Sectio
   return (
     <h2
       className={cn(
-        "text-text-primary text-section-heading leading-none font-extrabold tracking-[-0.03em]",
+        "text-text-primary text-section-heading font-extrabold tracking-[-0.03em]",
         className
       )}
       {...props}

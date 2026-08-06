@@ -82,7 +82,7 @@
 
   "testimonials": {
     "sectionTitle": "آراء العملاء",
-    "title": "ماذا يقول من <gradient>عملوا معي</gradient><accent>.</accent>",
+    "title": "ماذا يقول من <br></br><gradient>عملوا معي</gradient><accent>.</accent>",
     "subtitle": "آراء من عملاء وشركاء عمل أتيحت لي فرصة التعاون معهم.",
 
     "items": {
@@ -122,5 +122,11 @@
     "mySpecialty": "مطوّرة واجهات أمامية",
     "copyright": "© 2026 صدف نعماني",
     "footerDetails": "صُمم وطُوّر باستخدام Next.js — بشغف للتصميم الجميل."
+  },
+
+  "socials": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "البريد الإلكتروني"
   }
 }

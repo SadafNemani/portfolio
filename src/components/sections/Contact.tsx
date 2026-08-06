@@ -14,6 +14,7 @@ import Image from "next/image";
 
 export default async function Contact() {
   const t = await getTranslations("contact");
+  const tSocials = await getTranslations("socials");
 
   return (
     <Section id="contact" className="relative flex min-h-dvh flex-col overflow-hidden">
@@ -23,25 +24,26 @@ export default async function Contact() {
         <SectionHeader className="items-start justify-center">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
-          <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+          <SectionHeading>{t.rich("title", richText)}</SectionHeading>
 
           <div className="mt-10 flex gap-2.5">
             {socials.map((social) => {
               const Icon = social.lucideIcon;
+              const label = tSocials(social.id);
 
               return (
                 <SocialLink
                   key={social.id}
                   href={social.href}
-                  aria-label={social.name}
+                  aria-label={label}
                   icon={
                     social.logo ? (
-                      <Image src={social.logo} alt={social.name} width={22} height={22} />
+                      <Image src={social.logo} alt={label} width={22} height={22} />
                     ) : Icon ? (
                       <Icon size={22} />
                     ) : null
                   }
-                  label={social.name}
+                  label={label}
                 />
               );
             })}

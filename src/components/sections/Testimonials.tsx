@@ -30,7 +30,7 @@ export default async function Testimonials() {
         <SectionHeader className="items-start justify-center">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
-          <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+          <SectionHeading>{t.rich("title", richText)}</SectionHeading>
 
           <div className="flex items-baseline-last gap-2.5">
             <QuoteIcon className="text-emerald/50 size-25 fill-current" strokeWidth={0} />

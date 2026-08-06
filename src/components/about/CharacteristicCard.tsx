@@ -23,18 +23,18 @@ export default async function CharacteristicCard({
 
   return (
     <GlassCard
-      className={cn("rounded-button! flex h-28 max-w-max items-start gap-4.5 p-3", className)}
+      className={cn("rounded-button! flex h-28 w-auto items-start gap-4.5 p-3", className)}
       {...props}
     >
       <div className="rounded-button bg-[rgba(49, 214, 142, 0.06)] border-emerald-light max-h-15 max-w-15 border p-4.25 backdrop-blur-2xl">
         <Icon size={26} className="text-emerald-light" />
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-text-primary text-[18px] font-semibold">
+        <h3 className="text-text-primary text-section-description font-semibold">
           {t(`${characteristic.key}.title`)}
         </h3>
 
-        <p className="text-text-secondary text-section-label font-regular">
+        <p className="text-text-secondary text-body-sm font-regular">
           {t(`${characteristic.key}.subtitle`)}
         </p>
       </div>

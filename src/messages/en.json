@@ -122,5 +122,11 @@
     "mySpecialty": "Frontend Developer",
     "copyright": "© 2026 Sadaf Nemani",
     "footerDetails": "Designed & built with Next.js — and a love for good design."
+  },
+
+  "socials": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }

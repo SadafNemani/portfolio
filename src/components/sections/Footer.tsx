@@ -36,7 +36,7 @@ export default async function Footer() {
                 <span className="text-text-primary text-[25px] font-bold">
                   {t("footer.myName")}
                 </span>
-                <span className="text-text-secondary text-[18px] font-medium">
+                <span className="text-text-secondary text-section-description font-medium">
                   {t("footer.mySpecialty")}
                 </span>
               </div>
@@ -57,15 +57,16 @@ export default async function Footer() {
             <div className="flex gap-2.5">
               {socials.map((social) => {
                 const Icon = social.lucideIcon;
+                const label = t(`socials.${social.id}`);
 
                 return (
                   <SocialLink
                     key={social.id}
                     href={social.href}
-                    aria-label={social.name}
+                    aria-label={label}
                     icon={
                       social.logo ? (
-                        <Image src={social.logo} alt={social.name} width={22} height={22} />
+                        <Image src={social.logo} alt={label} width={22} height={22} />
                       ) : Icon ? (
                         <Icon size={22} />
                       ) : null
