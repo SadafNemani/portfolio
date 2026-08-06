@@ -33,7 +33,7 @@ export default async function Navbar({ className, ...props }: NavbarProps) {
           alt="Sadaf Nemani initials logo"
           width={60}
           height={54}
-          className="h-9 w-auto cursor-pointer transition-transform duration-300 select-none hover:scale-[1.03] lg:h-[54px]"
+          className="h-9 w-auto cursor-pointer transition-transform duration-300 select-none hover:scale-[1.03] lg:h-13.5"
         />
       </div>
 

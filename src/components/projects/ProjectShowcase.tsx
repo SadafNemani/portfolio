@@ -122,7 +122,7 @@ function PaginationNumber({ value }: { value: number }) {
           animate={{ rotateX: 0, opacity: 1 }}
           exit={{ rotateX: -90, opacity: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="text-text-primary absolute end-0 leading-none font-extrabold opacity-[0.12]"
+          className="text-text-primary absolute inset-e-0 leading-none font-extrabold opacity-[0.12]"
           style={{
             fontSize: "clamp(90px, 20vw, 300px)",
             top: "-0.18em",
