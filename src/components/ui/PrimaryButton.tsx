@@ -10,7 +10,7 @@ export default function PrimaryButton({ children, className, ...props }: Primary
   return (
     <button
       className={cn(
-        "rounded-button gradient-button-background border-border shadow-button text-body cursor-pointer border px-7 py-4 leading-6 font-semibold tracking-[-0.03em] text-white transition-all",
+        "rounded-button gradient-button-background border-border shadow-button text-body hover:shadow-emerald cursor-pointer border px-7 py-4 leading-6 font-semibold tracking-[-0.03em] text-white transition-all",
         className
       )}
       {...props}
