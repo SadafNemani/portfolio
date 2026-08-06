@@ -15,7 +15,7 @@ export default function ComingSoonState({ heading }: ComingSoonStateProps) {
   const t = useTranslations("projects.comingSoon");
 
   return (
-    <Container className="flex flex-col py-32 sm:py-36">
+    <Container className="flex flex-col py-16 sm:py-24 lg:py-36">
       {heading}
 
       <motion.div

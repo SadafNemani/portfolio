@@ -19,7 +19,7 @@ export default async function About() {
     <Section id="about" className="relative flex min-h-dvh flex-col overflow-hidden">
       <BackgroundHalos />
 
-      <Container className="grid items-center gap-12 py-32 sm:py-36 lg:grid-cols-[7fr_3fr]">
+      <Container className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[7fr_3fr] lg:py-36">
         <SectionHeader className="items-start">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 

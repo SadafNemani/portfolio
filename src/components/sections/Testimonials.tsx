@@ -26,7 +26,7 @@ export default async function Testimonials() {
     <Section id="testimonials" className="relative flex min-h-dvh flex-col overflow-hidden">
       <BackgroundHalos />
 
-      <Container className="grid gap-12 py-32 sm:py-36 lg:grid-cols-[4fr_6fr]">
+      <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[4fr_6fr] lg:py-36">
         <SectionHeader className="items-start justify-center">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 

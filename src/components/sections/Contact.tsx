@@ -20,7 +20,7 @@ export default async function Contact() {
     <Section id="contact" className="relative flex min-h-dvh flex-col overflow-hidden">
       <BackgroundHalos />
 
-      <Container className="grid gap-12 py-32 sm:py-36 lg:grid-cols-[5fr_5fr]">
+      <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[5fr_5fr] lg:py-36">
         <SectionHeader className="items-start justify-center">
           <SectionLabel>{t("sectionTitle")}</SectionLabel>
 
