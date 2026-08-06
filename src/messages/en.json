@@ -69,18 +69,14 @@
     "title": "My selected <gradient>works</gradient><accent>.</accent>",
 
     "items": {
-      "portfolio": {
-        "title": "Personal Portfolio",
-        "category": "Branding Website",
-        "description": "A modern multilingual portfolio built with Next.js and TypeScript."
-      },
-      "saas": {
-        "title": "SaaS",
-        "category": "SaaS Website",
-        "description": "A modern multilingual portfolio built with Next.js and TypeScript."
-      },
       "liveButton": "See Live",
       "githubButton": "See Source Code"
+    },
+
+    "comingSoon": {
+      "title": "New work is on the way.",
+      "description": "I'm currently building a selection of projects that showcase my approach to design, development, and performance.",
+      "status": "Currently in progress"
     }
   },
 

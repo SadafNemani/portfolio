@@ -8,6 +8,7 @@ import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import ProjectShowcase from "../projects/ProjectShowcase";
 import { projects } from "@/data/projects";
+import ComingSoonState from "../ui/ComingSoonState";
 
 export default async function Projects() {
   const t = await getTranslations("projects");
@@ -24,20 +25,22 @@ export default async function Projects() {
     githubButton: t("items.githubButton"),
   };
 
+  const heading = (
+    <SectionHeader className="items-start justify-center">
+      <SectionLabel>{t("sectionTitle")}</SectionLabel>
+      <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+    </SectionHeader>
+  );
+
   return (
     <Section id="projects" className="relative">
       <BackgroundHalos />
 
-      <ProjectShowcase
-        projects={translatedProjects}
-        labels={projectLabels}
-        heading={
-          <SectionHeader className="items-start justify-center">
-            <SectionLabel>{t("sectionTitle")}</SectionLabel>
-            <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
-          </SectionHeader>
-        }
-      />
+      {translatedProjects.length > 0 ? (
+        <ProjectShowcase projects={translatedProjects} labels={projectLabels} heading={heading} />
+      ) : (
+        <ComingSoonState heading={heading} />
+      )}
     </Section>
   );
 }

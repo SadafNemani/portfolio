@@ -69,18 +69,14 @@
     "title": "أبرز <gradient>أعمالي</gradient><accent>.</accent>",
 
     "items": {
-      "portfolio": {
-        "title": "الموقع الشخصي",
-        "category": "موقع تعريفي",
-        "description": "موقع شخصي متعدد اللغات مبني باستخدام Next.js وTypeScript."
-      },
-      "saas": {
-        "title": "SaaS",
-        "category": "موقع SaaS",
-        "description": "موقع شخصي متعدد اللغات مبني باستخدام Next.js وTypeScript."
-      },
       "liveButton": "معاينة الموقع",
       "githubButton": "الكود المصدري"
+    },
+
+    "comingSoon": {
+      "title": "أعمال جديدة في الطريق",
+      "description": "أعمل حاليًا على مجموعة من المشاريع التي تعكس أسلوبي في التصميم والتطوير والأداء.",
+      "status": "قيد التنفيذ حاليًا"
     }
   },
 
