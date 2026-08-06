@@ -35,7 +35,7 @@ export default async function About() {
         </SectionHeader>
         <div className="rounded-card border-border relative h-130 w-full overflow-hidden border">
           <Image
-            src="/images/about.png"
+            src="/images/sadaf_nemani.jpg"
             alt={t("imageAlt")}
             fill
             className="object-cover"
