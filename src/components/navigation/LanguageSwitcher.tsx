@@ -73,7 +73,7 @@ export default function LanguageSwitcher() {
               type="button"
               onClick={() => handleLanguageChange(language.code)}
               className={cn(
-                "flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-medium tracking-[-0.02em] transition-all duration-200",
+                "flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium tracking-[-0.02em] transition-all duration-200",
                 language.code === locale
                   ? "bg-emerald/10 text-emerald-light"
                   : "text-text-secondary hover:text-text-primary hover:bg-white/6"
