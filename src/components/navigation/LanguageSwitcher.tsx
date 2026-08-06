@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
@@ -12,12 +12,26 @@ import type { Locale } from "@/types/locale";
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
 
   const currentLanguage = languages.find((language) => language.code === locale);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   function handleLanguageChange(locale: Locale) {
     router.replace(pathname, {
@@ -27,7 +41,7 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="relative inline-block">
+    <div ref={containerRef} className="relative inline-block">
       <button
         type="button"
         onClick={() => setIsOpen((previous) => !previous)}
@@ -52,17 +66,17 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="bg-glass border-border shadow-card rounded-button absolute top-full right-0 z-50 mt-1.5 min-w-full overflow-hidden border p-1 ring-1 ring-white/6 backdrop-blur-2xl ring-inset">
+        <div className="bg-surface/95 border-border shadow-card rounded-button absolute top-full right-0 z-50 mt-2 min-w-35 overflow-hidden border p-1.5 backdrop-blur-2xl">
           {languages.map((language) => (
             <button
               key={language.code}
               type="button"
               onClick={() => handleLanguageChange(language.code)}
               className={cn(
-                "flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-[14px] px-3 py-1.5 text-xs font-medium tracking-[-0.02em] transition-all duration-200",
+                "flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-medium tracking-[-0.02em] transition-all duration-200",
                 language.code === locale
                   ? "bg-emerald/10 text-emerald-light"
-                  : "text-text-secondary hover:text-text-primary hover:bg-white/6 active:bg-white/8"
+                  : "text-text-secondary hover:text-text-primary hover:bg-white/6"
               )}
             >
               {language.code === locale && (
