@@ -38,7 +38,7 @@ export default async function About() {
             src="/images/sadaf_nemani.jpg"
             alt={t("imageAlt")}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
         </div>
