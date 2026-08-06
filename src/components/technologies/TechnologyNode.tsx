@@ -35,7 +35,7 @@ export default function TechnologyNode({
   return (
     <div
       className={cn(
-        "rounded-pill border-border bg-glass shadow-card flex w-fit items-center border backdrop-blur-2xl",
+        "rounded-pill border-border bg-glass shadow-card hover:border-emerald-light/30 flex w-fit items-center border backdrop-blur-2xl transition-colors duration-300",
         styles.wrapper,
         className
       )}

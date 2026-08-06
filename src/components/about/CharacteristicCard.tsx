@@ -23,7 +23,10 @@ export default async function CharacteristicCard({
 
   return (
     <GlassCard
-      className={cn("rounded-button! flex min-h-28 w-auto items-start gap-4.5 p-3", className)}
+      className={cn(
+        "rounded-button! hover:border-emerald/20 flex min-h-28 w-auto items-start gap-4.5 p-3 transition-colors duration-300",
+        className
+      )}
       {...props}
     >
       <div className="rounded-button bg-bg-[rgba(49,_214,_142,_0.06)] border-emerald-light max-h-15 max-w-15 border p-4.25 backdrop-blur-2xl">
