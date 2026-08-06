@@ -11,8 +11,8 @@ export default function SocialLink({ icon, label, className, ...props }: SocialL
   return (
     <a
       className={cn(
-        "rounded-pill border-border bg-glass shadow-button flex h-14 cursor-pointer items-center gap-3 border px-4 py-5.5 backdrop-blur-2xl transition-all select-none",
-        !label && "w-14 justify-center",
+        "rounded-pill border-border bg-glass shadow-button flex h-12 w-12 cursor-pointer items-center gap-3 border px-4 py-5.5 backdrop-blur-2xl transition-all select-none sm:h-14 sm:w-14",
+        !label && "w-12 justify-center sm:w-14",
         className
       )}
       {...props}

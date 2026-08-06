@@ -27,7 +27,7 @@ export default async function About() {
 
           <SectionDescription>{t("subtitle")}</SectionDescription>
 
-          <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:mt-8 sm:grid-cols-2">
             {characteristics.map((characteristic) => (
               <CharacteristicCard key={characteristic.key} characteristic={characteristic} />
             ))}
