@@ -42,7 +42,7 @@ export default async function Navbar({ className, ...props }: NavbarProps) {
           <a
             key={item.href}
             href={item.href}
-            className="text-body text-text-secondary after:bg-emerald/50 hover:text-text-primary active:text-emerald-light relative font-medium tracking-[-0.02em] transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full active:font-semibold"
+            className="text-body text-text-secondary after:bg-accent/60 hover:text-text-primary active:text-emerald-light relative font-medium tracking-[-0.02em] transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full active:font-semibold"
           >
             {item.label}
           </a>
