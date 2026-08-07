@@ -38,7 +38,6 @@
   --font-rtl: var(--font-ibmPlex);
 
   /* Font Size */
-  /* Font Size */
   --text-section-heading: clamp(2rem, 1.4rem + 2.5vw, 3.5rem);
   --text-section-label: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
   --text-section-description: clamp(1rem, 0.92rem + 0.35vw, 1.125rem);
@@ -103,4 +102,12 @@ body {
 
 .gradient-button-background {
   background: var(--gradient-button);
+}
+
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button {
+    cursor: none;
+  }
 }

@@ -51,6 +51,8 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
               target="_blank"
               rel="noopener noreferrer"
               aria-label={labels.liveButton}
+              data-cursor="special"
+              data-cursor-text="View project ↗"
             >
               <PrimaryButton type="button">{labels.liveButton}</PrimaryButton>
             </a>
