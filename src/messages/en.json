@@ -116,7 +116,23 @@
     "subjectPlaceholder": "Subject...",
     "messagePlaceholder": "Message...",
 
-    "sendButton": "Send Message"
+    "sendButton": "Send Message",
+
+    "validation": {
+      "nameMin": "Name must be at least 2 characters.",
+      "nameMax": "Name must be less than 100 characters.",
+      "emailInvalid": "Please enter a valid email address.",
+      "subjectMin": "Subject must be at least 3 characters.",
+      "subjectMax": "Subject must be less than 150 characters.",
+      "messageMin": "Message must be at least 10 characters.",
+      "messageMax": "Message must be less than 2000 characters."
+    },
+
+    "successMessage": "Thanks! Your message has been sent.",
+    "validationErrorMessage": "Please fix the errors below the fields.",
+    "serverErrorMessage": "Something went wrong on our end. Please try again later.",
+    "sendErrorMessage": "Something went wrong sending your message. Please try again.",
+    "sendingButton": "Sending..."
   },
 
   "footer": {
