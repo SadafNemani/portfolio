@@ -6,7 +6,6 @@ import Section from "@/components/layout/Section";
 import SectionDescription from "@/components/typography/SectionDescription";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
-import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import SecondaryButton from "@/components/ui/SecondaryButton";
@@ -20,8 +19,6 @@ export default async function Hero() {
 
   return (
     <Section id="home" className="relative flex min-h-dvh flex-col overflow-hidden py-0">
-      <BackgroundHalos />
-
       <Container className="relative flex flex-1 flex-col">
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-16 text-center sm:gap-12 sm:py-24 lg:py-36">
           <SectionHeader className="items-center">

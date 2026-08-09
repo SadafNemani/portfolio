@@ -4,7 +4,6 @@ import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
-import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import ContactCard from "../contact/ContactCard";
@@ -21,8 +20,6 @@ export default async function Contact() {
 
   return (
     <Section id="contact" className="relative flex min-h-dvh flex-col overflow-hidden">
-      <BackgroundHalos />
-
       <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[5fr_5fr] lg:py-36">
         <SectionHeader className="items-start justify-center">
           <Reveal gate={false} delay={0}>

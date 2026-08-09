@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import Section from "@/components/layout/Section";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
-import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import ProjectShowcase from "../projects/ProjectShowcase";
@@ -43,8 +42,6 @@ export default async function Projects() {
 
   return (
     <Section id="projects" className="relative">
-      <BackgroundHalos />
-
       {translatedProjects.length > 0 ? (
         <ProjectShowcase projects={translatedProjects} labels={projectLabels} heading={heading} />
       ) : (

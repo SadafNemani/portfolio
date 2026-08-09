@@ -5,7 +5,6 @@ import Section from "@/components/layout/Section";
 import SectionDescription from "@/components/typography/SectionDescription";
 import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
-import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import CharacteristicCard from "@/components/about/CharacteristicCard";
 import { richText } from "@/lib/richText";
 import { characteristics } from "@/data/about";
@@ -20,8 +19,6 @@ export default async function About() {
 
   return (
     <Section id="about" className="relative flex min-h-dvh flex-col overflow-hidden">
-      <BackgroundHalos />
-
       <Container className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[7fr_3fr] lg:py-36">
         <SectionHeader className="items-start">
           <Reveal gate={false} delay={0}>
