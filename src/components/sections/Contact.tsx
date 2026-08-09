@@ -11,6 +11,9 @@ import ContactCard from "../contact/ContactCard";
 import SocialLink from "../ui/SocialLink";
 import { socials } from "@/data/socials";
 import Image from "next/image";
+import Reveal from "../motion/Reveal";
+import WordReveal from "../motion/WordReveal";
+import PillReveal from "../motion/PillReveal";
 
 export default async function Contact() {
   const t = await getTranslations("contact");
@@ -22,37 +25,47 @@ export default async function Contact() {
 
       <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[5fr_5fr] lg:py-36">
         <SectionHeader className="items-start justify-center">
-          <SectionLabel>{t("sectionTitle")}</SectionLabel>
+          <Reveal gate={false} delay={0}>
+            <SectionLabel>{t("sectionTitle")}</SectionLabel>
+          </Reveal>
 
-          <SectionHeading>{t.rich("title", richText)}</SectionHeading>
+          <SectionHeading>
+            <WordReveal gate={false} delay={0.1}>
+              {t.rich("title", richText)}
+            </WordReveal>
+          </SectionHeading>
 
           <div className="mt-10 flex flex-wrap gap-2.5">
-            {socials.map((social) => {
+            {socials.map((social, index) => {
               const Icon = social.lucideIcon;
               const label = tSocials(social.id);
 
               return (
-                <SocialLink
-                  key={social.id}
-                  href={social.href}
-                  aria-label={label}
-                  icon={
-                    social.logo ? (
-                      <Image src={social.logo} alt={label} width={22} height={22} />
-                    ) : Icon ? (
-                      <Icon size={22} />
-                    ) : null
-                  }
-                  label={label}
-                />
+                <PillReveal key={social.id} delay={0.3 + index * 0.06}>
+                  <SocialLink
+                    key={social.id}
+                    href={social.href}
+                    aria-label={label}
+                    icon={
+                      social.logo ? (
+                        <Image src={social.logo} alt={label} width={22} height={22} />
+                      ) : Icon ? (
+                        <Icon size={22} />
+                      ) : null
+                    }
+                    label={label}
+                  />
+                </PillReveal>
               );
             })}
           </div>
         </SectionHeader>
 
-        <div className="flex flex-col gap-10">
-          <ContactCard />
-        </div>
+        <Reveal gate={false} delay={0.2} y={20}>
+          <div className="flex flex-col gap-10">
+            <ContactCard />
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );

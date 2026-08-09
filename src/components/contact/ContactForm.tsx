@@ -1,14 +1,16 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
-import PrimaryButton from "../ui/PrimaryButton";
+import SubmitButton from "@/components/motion/SubmitButton";
 import { sendContactEmail, type ContactFormState } from "@/app/actions/contact";
 
 const initialState: ContactFormState = { success: false, message: "" };
+const SUCCESS_ICON_DURATION = 2000;
 
 export default function ContactForm() {
   const t = useTranslations("contact");
@@ -17,6 +19,16 @@ export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const startTimeInputRef = useRef<HTMLInputElement>(null);
 
+  const [showSuccessIcon, setShowSuccessIcon] = useState(false);
+  const [previousSuccess, setPreviousSuccess] = useState(false);
+
+  if (state.success !== previousSuccess) {
+    setPreviousSuccess(state.success);
+    if (state.success) {
+      setShowSuccessIcon(true);
+    }
+  }
+
   useEffect(() => {
     if (startTimeInputRef.current) {
       startTimeInputRef.current.value = String(Date.now());
@@ -24,10 +36,15 @@ export default function ContactForm() {
   }, []);
 
   useEffect(() => {
-    if (state.success) {
+    if (!showSuccessIcon) return;
+
+    const timer = setTimeout(() => {
+      setShowSuccessIcon(false);
       formRef.current?.reset();
-    }
-  }, [state]);
+    }, SUCCESS_ICON_DURATION);
+
+    return () => clearTimeout(timer);
+  }, [showSuccessIcon]);
 
   return (
     <form ref={formRef} action={formAction} className="flex flex-col gap-6">
@@ -67,18 +84,30 @@ export default function ContactForm() {
         error={state.errors?.message}
       />
 
-      <PrimaryButton type="submit" disabled={isPending}>
+      <SubmitButton
+        type="submit"
+        disabled={isPending}
+        isPending={isPending}
+        isSuccess={showSuccessIcon}
+      >
         {isPending ? t("sendingButton") : t("sendButton")}
-      </PrimaryButton>
+      </SubmitButton>
 
-      {state.message && (
-        <p
-          role="status"
-          className={state.success ? "text-emerald-light text-sm" : "text-sm text-red-400"}
-        >
-          {state.message}
-        </p>
-      )}
+      <AnimatePresence>
+        {state.message && (
+          <motion.p
+            key={state.message}
+            role="status"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className={state.success ? "text-emerald-light text-sm" : "text-sm text-red-400"}
+          >
+            {state.message}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </form>
   );
 }
