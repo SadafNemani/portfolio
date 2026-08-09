@@ -5,6 +5,7 @@
   },
 
   "navigation": {
+    "home": "Home",
     "about": "About",
     "technologies": "Technologies",
     "projects": "Projects",

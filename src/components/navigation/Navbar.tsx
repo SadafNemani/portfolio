@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 
 import { cn } from "@/lib/utils";
 
@@ -6,16 +6,21 @@ import { NAVIGATION_ITEMS } from "@/constants";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type NavbarProps = React.ComponentProps<"header">;
 
-export default async function Navbar({ className, ...props }: NavbarProps) {
-  const t = await getTranslations("navigation");
+export default function Navbar({ className, ...props }: NavbarProps) {
+  const t = useTranslations("navigation");
+  const activeId = useActiveSection([...NAVIGATION_ITEMS]);
 
   const navItems = NAVIGATION_ITEMS.map((item) => ({
     href: `#${item}`,
+    id: item,
     label: t(item),
   }));
 
@@ -42,16 +47,28 @@ export default async function Navbar({ className, ...props }: NavbarProps) {
           <a
             key={item.href}
             href={item.href}
-            className="text-body text-text-secondary after:bg-accent/60 hover:text-text-primary active:text-emerald-light relative font-medium tracking-[-0.02em] transition-colors duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:transition-all after:duration-300 hover:after:w-full active:font-semibold"
+            className={cn(
+              "text-body relative font-medium tracking-[-0.02em] transition-colors duration-300",
+              activeId === item.id
+                ? "text-text-primary"
+                : "text-text-secondary hover:text-text-primary"
+            )}
           >
             {item.label}
+            {activeId === item.id && (
+              <motion.span
+                layoutId="navbar-underline"
+                className="bg-emerald absolute bottom-0 left-0 h-px w-full"
+                transition={{ type: "spring", stiffness: 280, damping: 32 }}
+              />
+            )}
           </a>
         ))}
       </nav>
 
       <div className="flex shrink-0 items-center justify-end gap-2 overflow-visible">
         <LanguageSwitcher />
-        <MobileMenu items={navItems} />
+        <MobileMenu items={navItems.map(({ href, label }) => ({ href, label }))} />
       </div>
     </header>
   );

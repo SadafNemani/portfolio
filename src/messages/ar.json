@@ -5,6 +5,7 @@
   },
 
   "navigation": {
+    "home": "الرئیسیة",
     "about": "نبذة عني",
     "technologies": "التقنيات",
     "projects": "المشاريع",
