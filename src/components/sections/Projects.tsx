@@ -9,6 +9,8 @@ import SectionHeader from "../layout/SectionHeader";
 import ProjectShowcase from "../projects/ProjectShowcase";
 import { projects } from "@/data/projects";
 import ComingSoonState from "../ui/ComingSoonState";
+import Reveal from "../motion/Reveal";
+import WordReveal from "../motion/WordReveal";
 
 export default async function Projects() {
   const t = await getTranslations("projects");
@@ -27,8 +29,15 @@ export default async function Projects() {
 
   const heading = (
     <SectionHeader className="items-start justify-center">
-      <SectionLabel>{t("sectionTitle")}</SectionLabel>
-      <SectionHeading className="leading-[105%]">{t.rich("title", richText)}</SectionHeading>
+      <Reveal gate={false} delay={0}>
+        <SectionLabel>{t("sectionTitle")}</SectionLabel>
+      </Reveal>
+
+      <SectionHeading className="leading-[105%]">
+        <WordReveal gate={false} delay={0.1}>
+          {t.rich("title", richText)}
+        </WordReveal>
+      </SectionHeading>
     </SectionHeader>
   );
 

@@ -22,7 +22,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
   return (
     <GlassCard
       className={cn(
-        "hover:border-emerald/20 flex h-full min-h-0 flex-col gap-6 overflow-y-auto p-5 transition-colors duration-300 lg:flex-row lg:gap-10",
+        "hover:border-emerald/20 flex h-full min-h-0 flex-col gap-6 overflow-y-auto border-transparent p-5 transition-all duration-300 hover:-translate-y-1 lg:flex-row lg:gap-10",
         className
       )}
       {...props}
