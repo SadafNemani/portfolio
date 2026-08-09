@@ -1,4 +1,7 @@
+"use client";
+
 import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -18,7 +21,13 @@ export default function ScrollIndicator({
       className={cn("flex flex-col items-center gap-3 transition-all select-none", className)}
       {...props}
     >
-      <span className="text-emerald">{icon}</span>
+      <motion.span
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        className="text-emerald"
+      >
+        {icon}
+      </motion.span>
 
       <span className="text-body text-text-secondary font-medium">{children}</span>
     </a>
