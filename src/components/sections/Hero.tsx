@@ -12,6 +12,7 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import SecondaryButton from "@/components/ui/SecondaryButton";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
+import Reveal from "../motion/Reveal";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -21,25 +22,33 @@ export default async function Hero() {
       <BackgroundHalos />
 
       <Container className="relative flex flex-1 flex-col">
-        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-32 text-center sm:gap-12 sm:py-36">
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-16 text-center sm:gap-12 sm:py-24 lg:py-36">
           <SectionHeader className="items-center">
-            <SectionLabel>{t("sectionTitle")}</SectionLabel>
+            <Reveal delay={0}>
+              <SectionLabel>{t("sectionTitle")}</SectionLabel>
+            </Reveal>
 
             <SectionHeading className="text-hero-title! max-w-[18ch]">
               {t.rich("title", richText)}
             </SectionHeading>
 
-            <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
+            <Reveal delay={1.6}>
+              <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
+            </Reveal>
           </SectionHeader>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <PrimaryButton type="button">{t("primaryButton")}</PrimaryButton>
-            <SecondaryButton type="button">{t("secondaryButton")}</SecondaryButton>
-          </div>
+          <Reveal delay={2.1}>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <PrimaryButton type="button">{t("primaryButton")}</PrimaryButton>
+              <SecondaryButton type="button">{t("secondaryButton")}</SecondaryButton>
+            </div>
+          </Reveal>
 
-          <ScrollIndicator href="#about" icon={<ChevronDown size={22} strokeWidth={2} />}>
-            {t("scrollIndicator")}
-          </ScrollIndicator>
+          <Reveal delay={2.45}>
+            <ScrollIndicator href="#about" icon={<ChevronDown size={22} strokeWidth={2} />}>
+              {t("scrollIndicator")}
+            </ScrollIndicator>
+          </Reveal>
         </div>
       </Container>
     </Section>
