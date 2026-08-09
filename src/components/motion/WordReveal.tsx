@@ -1,7 +1,7 @@
 "use client";
 
-import { Children, Fragment, isValidElement, type ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { Children, Fragment, isValidElement, useRef, type ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 import { LOADER_TOTAL_DURATION, LOADER_REDUCED_MOTION_DURATION } from "@/constants/loader";
 
@@ -24,7 +24,6 @@ function tokenize(children: ReactNode): Token[] {
     if (typeof child === "string") {
       child.split(/(\s+)/).forEach((part) => {
         if (part === "") return;
-
         if (/^\s+$/.test(part)) {
           tokens.push({ type: "space" });
         } else {
@@ -52,20 +51,23 @@ export default function WordReveal({
   className,
   gate = true,
 }: WordRevealProps) {
+  const containerRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
   const prefersReducedMotion = useReducedMotion();
 
   const baseDelay = gate
     ? (prefersReducedMotion ? LOADER_REDUCED_MOTION_DURATION : LOADER_TOTAL_DURATION) / 1000
     : 0;
 
+  const shouldAnimate = gate ? true : isInView;
+
   if (prefersReducedMotion) {
     return (
       <motion.span
+        ref={containerRef}
         initial={{ opacity: 0 }}
-        animate={gate ? { opacity: 1 } : undefined}
-        whileInView={gate ? undefined : { opacity: 1 }}
-        viewport={gate ? undefined : { once: true, amount: 0.3 }}
-        transition={{ duration: 0.3, delay: baseDelay }}
+        animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.3, delay: gate ? baseDelay : 0 }}
         className={className}
       >
         {children}
@@ -76,15 +78,10 @@ export default function WordReveal({
   const tokens = tokenize(children);
 
   return (
-    <span className={className}>
+    <span ref={containerRef} className={className}>
       {tokens.map((token, index) => {
-        if (token.type === "space") {
-          return <Fragment key={index}> </Fragment>;
-        }
-
-        if (token.type === "break") {
-          return <br key={index} />;
-        }
+        if (token.type === "space") return <Fragment key={index}> </Fragment>;
+        if (token.type === "break") return <br key={index} />;
 
         const wordDelay = baseDelay + delay + token.wordIndex * wordStagger;
 
@@ -95,9 +92,7 @@ export default function WordReveal({
           >
             <motion.span
               initial={{ y: "110%", opacity: 0 }}
-              animate={gate ? { y: "0%", opacity: 1 } : undefined}
-              whileInView={gate ? undefined : { y: "0%", opacity: 1 }}
-              viewport={gate ? undefined : { once: true, amount: 0.6 }}
+              animate={shouldAnimate ? { y: "0%", opacity: 1 } : { y: "110%", opacity: 0 }}
               transition={{ duration: 0.75, delay: wordDelay, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: "inline-block", marginBottom: "-0.15em" }}
             >
