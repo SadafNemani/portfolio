@@ -1,4 +1,7 @@
-import type { HTMLAttributes } from "react";
+"use client";
+
+import type { HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Technology } from "@/types/technologies";
 
@@ -6,7 +9,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-interface TechnologyNodeProps extends HTMLAttributes<HTMLDivElement> {
+interface TechnologyNodeProps extends HTMLMotionProps<"div"> {
   technology: Technology;
   size?: "default" | "sm";
 }
@@ -33,9 +36,11 @@ export default function TechnologyNode({
   const styles = sizeStyles[size];
 
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.05, y: -2 }}
+      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "rounded-pill border-border bg-glass shadow-card hover:border-emerald-light/30 flex w-fit items-center border backdrop-blur-2xl transition-colors duration-300",
+        "rounded-pill border-border bg-glass shadow-card hover:border-emerald-light/30 flex w-fit cursor-default items-center border backdrop-blur-2xl transition-colors duration-300",
         styles.wrapper,
         className
       )}
@@ -50,6 +55,6 @@ export default function TechnologyNode({
       >
         {technology.name}
       </span>
-    </div>
+    </motion.div>
   );
 }
