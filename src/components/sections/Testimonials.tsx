@@ -11,6 +11,9 @@ import SectionHeader from "../layout/SectionHeader";
 import { QuoteIcon } from "lucide-react";
 import TestimonialCarousel from "../testimonials/TestimonialCarousel";
 import { testimonials } from "@/data/testimonials";
+import Reveal from "../motion/Reveal";
+import WordReveal from "../motion/WordReveal";
+import QuoteMarkReveal from "../motion/QuoteMarkReveal";
 
 export default async function Testimonials() {
   const t = await getTranslations("testimonials");
@@ -28,16 +31,27 @@ export default async function Testimonials() {
 
       <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[4fr_6fr] lg:py-36">
         <SectionHeader className="items-start justify-center">
-          <SectionLabel>{t("sectionTitle")}</SectionLabel>
+          <Reveal gate={false} delay={0}>
+            <SectionLabel>{t("sectionTitle")}</SectionLabel>
+          </Reveal>
 
-          <SectionHeading>{t.rich("title", richText)}</SectionHeading>
+          <SectionHeading>
+            <WordReveal gate={false} delay={0.1}>
+              {t.rich("title", richText)}
+            </WordReveal>
+          </SectionHeading>
 
           <div className="flex items-baseline-last gap-2.5">
-            <QuoteIcon
-              className="text-emerald/50 size-14 fill-current sm:size-20 lg:size-25"
-              strokeWidth={0}
-            />
-            <SectionDescription>{t("subtitle")}</SectionDescription>
+            <QuoteMarkReveal delay={0.3}>
+              <QuoteIcon
+                className="text-emerald/50 size-14 fill-current sm:size-20 lg:size-25"
+                strokeWidth={0}
+              />
+            </QuoteMarkReveal>
+
+            <Reveal gate={false} delay={0.4}>
+              <SectionDescription>{t("subtitle")}</SectionDescription>
+            </Reveal>
           </div>
         </SectionHeader>
 
