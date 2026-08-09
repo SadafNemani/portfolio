@@ -15,6 +15,7 @@ import Footer from "@/components/sections/Footer";
 import CustomCursor from "@/components/system/CustomCursor";
 import PageLoader from "@/components/system/PageLoader";
 import BackgroundHalos from "@/components/ui/BackgroundHalos";
+import ScrollToTopButton from "@/components/system/ScrollToTopButton";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
 
@@ -97,6 +98,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Navbar />
           {children}
           <Footer />
+          <ScrollToTopButton />
         </NextIntlClientProvider>
       </body>
     </html>
