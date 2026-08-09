@@ -40,8 +40,12 @@ export default async function Hero() {
 
           <Reveal delay={2}>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <PrimaryButton type="button">{t("primaryButton")}</PrimaryButton>
-              <SecondaryButton type="button">{t("secondaryButton")}</SecondaryButton>
+              <PrimaryButton type="button" href="#projects">
+                {t("primaryButton")}
+              </PrimaryButton>
+              <SecondaryButton type="button" href="#contact">
+                {t("secondaryButton")}
+              </SecondaryButton>
             </div>
           </Reveal>
 
