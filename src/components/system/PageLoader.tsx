@@ -4,15 +4,17 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
+import {
+  LOADER_DRAW_DURATION as DRAW_DURATION,
+  LOADER_HOLD_DURATION as HOLD_DURATION,
+  LOADER_EXPAND_DURATION as EXPAND_DURATION,
+  LOADER_REDUCED_MOTION_DURATION as REDUCED_MOTION_DURATION,
+} from "@/constants/loader";
+
 type Phase = "drawing" | "complete" | "expanding";
 
 const RING_RADIUS = 120;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
-
-const DRAW_DURATION = 1300;
-const HOLD_DURATION = 300;
-const EXPAND_DURATION = 600;
-const REDUCED_MOTION_DURATION = 500;
 
 export default function PageLoader() {
   const [isVisible, setIsVisible] = useState(true);
