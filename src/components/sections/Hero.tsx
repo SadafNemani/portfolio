@@ -13,6 +13,7 @@ import SecondaryButton from "@/components/ui/SecondaryButton";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import Reveal from "../motion/Reveal";
+import WordReveal from "../motion/WordReveal";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -29,22 +30,22 @@ export default async function Hero() {
             </Reveal>
 
             <SectionHeading className="text-hero-title! max-w-[18ch]">
-              {t.rich("title", richText)}
+              <WordReveal delay={0.35}>{t.rich("title", richText)}</WordReveal>
             </SectionHeading>
 
-            <Reveal delay={1.6}>
+            <Reveal delay={1.5}>
               <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
             </Reveal>
           </SectionHeader>
 
-          <Reveal delay={2.1}>
+          <Reveal delay={2}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton type="button">{t("primaryButton")}</PrimaryButton>
               <SecondaryButton type="button">{t("secondaryButton")}</SecondaryButton>
             </div>
           </Reveal>
 
-          <Reveal delay={2.45}>
+          <Reveal delay={2.3}>
             <ScrollIndicator href="#about" icon={<ChevronDown size={22} strokeWidth={2} />}>
               {t("scrollIndicator")}
             </ScrollIndicator>
