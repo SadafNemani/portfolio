@@ -12,7 +12,8 @@ import "@/app/globals.css";
 import PersonJsonLd from "@/components/seo/PersonJsonLd";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/sections/Footer";
-import CustomCursor from "@/components/ui/CustomCursor";
+import CustomCursor from "@/components/system/CustomCursor";
+import PageLoader from "@/components/system/PageLoader";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
 
@@ -89,6 +90,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="antialiased">
         <PersonJsonLd />
         <NextIntlClientProvider messages={messages}>
+          <PageLoader />
           <CustomCursor />
           <Navbar />
           {children}
