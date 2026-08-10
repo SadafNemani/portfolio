@@ -92,7 +92,7 @@
 
   "testimonials": {
     "sectionTitle": "TESTIMONIALS",
-    "title": "What people say about <gradient>working with me</gradient><accent>.</accent>",
+    "title": "What clients say about <gradient>my work</gradient><accent>.</accent>",
     "subtitle": "Feedback from clients and collaborators I've had the chance to build with.",
 
     "items": {
@@ -116,7 +116,7 @@
 
   "contact": {
     "sectionTitle": "Contact",
-    "title": "Let's build something <gradient>together</gradient><accent>.</accent>",
+    "title": "Let's build something <br></br><gradient>together</gradient><accent>.</accent>",
     "contactDetail": "Usually replies within 24 hours<br></br>Open to freelance projects",
 
     "namePlaceholder": "Your Name...",
