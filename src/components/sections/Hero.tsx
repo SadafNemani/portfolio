@@ -27,7 +27,9 @@ export default async function Hero() {
             </Reveal>
 
             <SectionHeading className="text-hero-title! max-w-[18ch]">
-              <WordReveal delay={0.35}>{t.rich("title", richText)}</WordReveal>
+              <WordReveal delay={0.1} wordStagger={0.05} gate={false}>
+                {t.rich("title", richText)}
+              </WordReveal>
             </SectionHeading>
 
             <Reveal delay={1.5}>

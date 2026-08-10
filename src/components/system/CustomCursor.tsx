@@ -12,7 +12,7 @@ function subscribteToFinePointer(callback: () => void) {
 }
 
 function getFinePointerSnapshot() {
-  return window.matchMedia("(pointer: fine").matches;
+  return window.matchMedia("(pointer: fine)").matches;
 }
 
 function getFinePointerServerSnapshot() {

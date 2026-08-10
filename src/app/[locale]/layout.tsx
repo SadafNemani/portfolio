@@ -13,7 +13,6 @@ import PersonJsonLd from "@/components/seo/PersonJsonLd";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/sections/Footer";
 import CustomCursor from "@/components/system/CustomCursor";
-import PageLoader from "@/components/system/PageLoader";
 import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import ScrollToTopButton from "@/components/system/ScrollToTopButton";
 
@@ -90,7 +89,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="antialiased">
-        <PageLoader />
         <CustomCursor />
         <BackgroundHalos className="fixed inset-0 z-0 overflow-hidden" />
         <PersonJsonLd />

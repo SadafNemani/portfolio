@@ -27,7 +27,7 @@ export default function Navbar({ className, ...props }: NavbarProps) {
   return (
     <header
       className={cn(
-        "rounded-pill border-border bg-glass shadow-card fixed top-6 left-1/2 z-50 flex w-[min(880px,calc(100%-3rem))] -translate-x-1/2 items-center justify-between overflow-visible border px-4 py-2.5 ring-1 ring-white/6 backdrop-blur-2xl ring-inset sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]",
+        "rounded-pill border-border shadow-card bg-glass fixed top-6 left-1/2 z-50 flex w-[min(880px,calc(100%-3rem))] -translate-x-1/2 items-center justify-between overflow-visible border px-4 py-2.5 ring-1 ring-white/6 backdrop-blur-sm ring-inset sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]",
         className
       )}
       {...props}
