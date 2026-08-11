@@ -22,7 +22,7 @@ export default async function Hero() {
       <Container className="relative flex flex-1 flex-col">
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-16 text-center sm:gap-12 sm:py-24 lg:py-36">
           <SectionHeader className="items-center">
-            <Reveal delay={0}>
+            <Reveal delay={0} gate={false}>
               <SectionLabel>{t("sectionTitle")}</SectionLabel>
             </Reveal>
 
@@ -32,12 +32,12 @@ export default async function Hero() {
               </WordReveal>
             </SectionHeading>
 
-            <Reveal delay={1.5}>
+            <Reveal delay={0.5} gate={false}>
               <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
             </Reveal>
           </SectionHeader>
 
-          <Reveal delay={2}>
+          <Reveal delay={1} gate={false}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton type="button" href="#projects">
                 {t("primaryButton")}
