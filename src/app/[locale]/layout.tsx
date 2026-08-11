@@ -16,6 +16,8 @@ import CustomCursor from "@/components/system/CustomCursor";
 import BackgroundHalos from "@/components/ui/BackgroundHalos";
 import ScrollToTopButton from "@/components/system/ScrollToTopButton";
 
+import MotionProvider from "@/components/system/MotionProvider";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
 
 type Props = {
@@ -89,15 +91,17 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="antialiased">
-        <CustomCursor />
-        <BackgroundHalos className="fixed inset-0 z-0 overflow-hidden" />
-        <PersonJsonLd />
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
-          <Footer />
-          <ScrollToTopButton />
-        </NextIntlClientProvider>
+        <MotionProvider>
+          <CustomCursor />
+          <BackgroundHalos className="fixed inset-0 z-0 overflow-hidden" />
+          <PersonJsonLd />
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            {children}
+            <Footer />
+            <ScrollToTopButton />
+          </NextIntlClientProvider>
+        </MotionProvider>
       </body>
     </html>
   );
