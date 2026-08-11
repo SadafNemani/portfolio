@@ -1,7 +1,7 @@
 "use client";
 
 import type { HTMLMotionProps } from "framer-motion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { Technology } from "@/types/technologies";
 
@@ -36,7 +36,7 @@ export default function TechnologyNode({
   const styles = sizeStyles[size];
 
   return (
-    <motion.div
+    <m.div
       whileHover={{ scale: 1.05, y: -2 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
@@ -55,6 +55,6 @@ export default function TechnologyNode({
       >
         {technology.name}
       </span>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { HTMLMotionProps, m } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -40,14 +40,14 @@ export default function PrimaryButton({ children, className, ...props }: Primary
     const { href, ...linkProps } = props as PrimaryButtonAsLink;
 
     return (
-      <motion.a
+      <m.a
         href={href}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         className={cn(buttonClassName, className)}
         {...linkProps}
       >
-        <motion.span
+        <m.span
           aria-hidden="true"
           className={glowLayerClassName}
           style={glowStyle}
@@ -55,21 +55,21 @@ export default function PrimaryButton({ children, className, ...props }: Primary
           transition={glowTransition}
         />
         {children}
-      </motion.a>
+      </m.a>
     );
   }
 
   const { type = "button", ...buttonProps } = props as PrimaryButtonAsButton;
 
   return (
-    <motion.button
+    <m.button
       type={type}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={cn(buttonClassName, className)}
       {...buttonProps}
     >
-      <motion.span
+      <m.span
         aria-hidden="true"
         className={glowLayerClassName}
         style={glowStyle}
@@ -77,6 +77,6 @@ export default function PrimaryButton({ children, className, ...props }: Primary
         transition={glowTransition}
       />
       {children}
-    </motion.button>
+    </m.button>
   );
 }

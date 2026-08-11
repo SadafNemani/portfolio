@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 
 type CursorState = "default" | "hover" | "special";
 
@@ -85,7 +85,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      <motion.div
+      <m.div
         aria-hidden="true"
         className="bg-emerald pointer-events-none fixed top-0 left-0 z-9999 rounded-full"
         style={{
@@ -100,7 +100,7 @@ export default function CustomCursor() {
         transition={{ duration: 0.2 }}
       />
 
-      <motion.div
+      <m.div
         aria-hidden="true"
         className="border-emerald/40 bg-emerald/5 pointer-events-none fixed top-0 left-0 z-9998 flex items-center justify-center rounded-full border"
         style={{
@@ -118,16 +118,16 @@ export default function CustomCursor() {
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
         {specialText && (
-          <motion.span
+          <m.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.2, delay: 0.05 }}
             className="text-text-primary text-[10px] font-medium tracking-[-0.02em] whitespace-nowrap"
           >
             {specialText}
-          </motion.span>
+          </m.span>
         )}
-      </motion.div>
+      </m.div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 import { LOADER_TOTAL_DURATION, LOADER_REDUCED_MOTION_DURATION } from "@/constants/loader";
 
@@ -29,7 +29,7 @@ export default function Reveal({
     : 0;
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: prefersReducedMotion ? 0 : y }}
       whileInView={gate ? undefined : { opacity: 1, y: 0 }}
       animate={gate ? { opacity: 1, y: 0 } : undefined}
@@ -42,6 +42,6 @@ export default function Reveal({
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

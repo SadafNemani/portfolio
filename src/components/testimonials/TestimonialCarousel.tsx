@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 import { TestimonialContent } from "@/types/testimonials";
 import TestimonialCard from "./TestimonialCard";
@@ -27,7 +27,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       <div className="bg-emerald/30 absolute inset-x-10 bottom-0 h-24 rounded-full blur-3xl" />
 
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={testimonials[currentIndex].slug}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
           }}
         >
           <TestimonialCard testimonial={testimonials[currentIndex]} />
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     </div>
   );

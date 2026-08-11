@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 import {
@@ -56,18 +56,14 @@ export default function PageLoader() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
+        <m.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: prefersReducedMotion ? 0.2 : 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="bg-background fixed inset-0 z-10000 flex items-center justify-center overflow-hidden"
         >
           {prefersReducedMotion ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
-            >
+            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
               <Image
                 src="/logos/SadafLogo.svg"
                 alt="Sadaf Nemani"
@@ -76,10 +72,10 @@ export default function PageLoader() {
                 priority
                 className="h-auto w-28 sm:w-42"
               />
-            </motion.div>
+            </m.div>
           ) : (
             <div className="relative flex items-center justify-center">
-              <motion.div
+              <m.div
                 animate={{
                   opacity: phase === "expanding" ? 0 : [0, 0.5, 0.3],
                   scale: phase === "expanding" ? 3 : [0.85, 1.3, 1.4],
@@ -92,7 +88,7 @@ export default function PageLoader() {
                 className="bg-emerald/30 pointer-events-none absolute h-40 w-40 rounded-full blur-[60px] sm:h-64 sm:w-64 sm:blur-[80px]"
               />
 
-              <motion.svg
+              <m.svg
                 width="180"
                 height="180"
                 viewBox="0 0 288 288"
@@ -111,7 +107,7 @@ export default function PageLoader() {
                   stroke="rgba(52, 211, 153, 0.15)"
                   strokeWidth="2.5"
                 />
-                <motion.circle
+                <m.circle
                   cx="144"
                   cy="144"
                   r={RING_RADIUS}
@@ -130,9 +126,9 @@ export default function PageLoader() {
                     opacity: { duration: HOLD_DURATION / 1000, ease: "easeInOut" },
                   }}
                 />
-              </motion.svg>
+              </m.svg>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
                   opacity: phase === "expanding" ? 0 : 1,
@@ -151,10 +147,10 @@ export default function PageLoader() {
                   priority
                   className="h-auto w-28 sm:w-42"
                 />
-              </motion.div>
+              </m.div>
             </div>
           )}
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

@@ -3,7 +3,7 @@
 import { ReactNode, useRef, useState } from "react";
 import {
   AnimatePresence,
-  motion,
+  m,
   MotionValue,
   useMotionValueEvent,
   useScroll,
@@ -103,12 +103,12 @@ function StackedCard({
   });
 
   return (
-    <motion.div
+    <m.div
       className="absolute inset-0 h-full min-h-0"
       style={{ y, zIndex: index, willChange: "transform" }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -116,7 +116,7 @@ function PaginationNumber({ value }: { value: number }) {
   return (
     <div className="relative h-full" style={{ perspective: 1000 }}>
       <AnimatePresence mode="popLayout">
-        <motion.span
+        <m.span
           key={value}
           initial={{ rotateX: 90, opacity: 0 }}
           animate={{ rotateX: 0, opacity: 1 }}
@@ -130,7 +130,7 @@ function PaginationNumber({ value }: { value: number }) {
           }}
         >
           {String(value).padStart(2, "0")}
-        </motion.span>
+        </m.span>
       </AnimatePresence>
     </div>
   );

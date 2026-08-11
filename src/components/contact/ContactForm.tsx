@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
 import Input from "../ui/Input";
@@ -95,7 +95,7 @@ export default function ContactForm() {
 
       <AnimatePresence>
         {state.message && (
-          <motion.p
+          <m.p
             key={state.message}
             role="status"
             initial={{ opacity: 0, y: -6 }}
@@ -105,7 +105,7 @@ export default function ContactForm() {
             className={state.success ? "text-emerald-light text-sm" : "text-sm text-red-400"}
           >
             {state.message}
-          </motion.p>
+          </m.p>
         )}
       </AnimatePresence>
     </form>

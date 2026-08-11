@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type ReactNode } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 
 interface QuoteMarkRevealProps {
   children: ReactNode;
@@ -23,32 +23,32 @@ export default function QuoteMarkReveal({ children, delay = 0 }: QuoteMarkReveal
 
   if (prefersReducedMotion) {
     return (
-      <motion.div
+      <m.div
         ref={containerRef}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
         {children}
-      </motion.div>
+      </m.div>
     );
   }
 
   if (phase === "pulsing") {
     return (
-      <motion.div
+      <m.div
         ref={containerRef}
         style={{ opacity: 0.5 }}
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
       >
         {children}
-      </motion.div>
+      </m.div>
     );
   }
 
   return (
-    <motion.div
+    <m.div
       ref={containerRef}
       initial={{ opacity: 0, scale: 0.6, rotate: -15 }}
       animate={phase === "entering" ? { opacity: 0.5, scale: 1, rotate: 0 } : {}}
@@ -58,6 +58,6 @@ export default function QuoteMarkReveal({ children, delay = 0 }: QuoteMarkReveal
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

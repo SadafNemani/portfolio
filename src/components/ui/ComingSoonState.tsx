@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import Container from "../layout/Container";
@@ -18,7 +18,7 @@ export default function ComingSoonState({ heading }: ComingSoonStateProps) {
     <Container className="flex flex-col py-16 sm:py-24 lg:py-36">
       {heading}
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
@@ -43,14 +43,14 @@ export default function ComingSoonState({ heading }: ComingSoonStateProps) {
             {t("status")}
           </div>
         </GlassCard>
-      </motion.div>
+      </m.div>
     </Container>
   );
 }
 
 function PulsingIcon() {
   return (
-    <motion.div
+    <m.div
       animate={{ scale: [1, 1.06, 1] }}
       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       className="border-border bg-glass relative flex h-16 w-16 items-center justify-center rounded-full border backdrop-blur-2xl"
@@ -71,6 +71,6 @@ function PulsingIcon() {
         />
         <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.75" />
       </svg>
-    </motion.div>
+    </m.div>
   );
 }

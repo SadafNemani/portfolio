@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -28,7 +28,7 @@ export default function ScrollToTopButton() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           type="button"
           onClick={handleClick}
           aria-label={t("scrollToTop")}
@@ -41,7 +41,7 @@ export default function ScrollToTopButton() {
           className="rounded-pill border-border bg-glass shadow-button hover:border-emerald/30 fixed right-6 bottom-6 z-40 flex h-12 w-12 cursor-pointer items-center justify-center border backdrop-blur-2xl transition-colors duration-300 sm:right-8 sm:bottom-8"
         >
           <ArrowUp size={20} className="text-emerald" strokeWidth={2.25} />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );

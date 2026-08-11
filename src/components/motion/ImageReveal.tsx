@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { m, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 interface ImageRevealProps {
   children: React.ReactNode;
@@ -26,7 +26,7 @@ export default function ImageReveal({ children, className }: ImageRevealProps) {
       className={className}
       style={{ overflow: "hidden", position: "relative" }}
     >
-      <motion.div
+      <m.div
         style={{
           position: "absolute",
           inset: 0,
@@ -34,7 +34,7 @@ export default function ImageReveal({ children, className }: ImageRevealProps) {
           y: prefersReducedMotion ? 0 : parallaxY,
         }}
       >
-        <motion.div
+        <m.div
           initial={{ clipPath: "inset(0% 0% 100% 0%)", scale: 1.15 }}
           animate={
             isInView
@@ -45,8 +45,8 @@ export default function ImageReveal({ children, className }: ImageRevealProps) {
           style={{ position: "relative", height: "100%", width: "100%" }}
         >
           {children}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </div>
   );
 }

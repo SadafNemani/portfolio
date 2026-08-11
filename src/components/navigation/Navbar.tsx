@@ -7,7 +7,7 @@ import { NAVIGATION_ITEMS } from "@/constants";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -57,7 +57,7 @@ export default function Navbar({ className, ...props }: NavbarProps) {
           >
             {item.label}
             {activeId === item.id && (
-              <motion.span
+              <m.span
                 layoutId="navbar-underline"
                 className="bg-emerald absolute bottom-0 left-0 h-px w-full"
                 transition={{ type: "spring", stiffness: 280, damping: 32 }}

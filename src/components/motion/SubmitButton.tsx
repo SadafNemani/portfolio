@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
+import { AnimatePresence, HTMLMotionProps, m } from "framer-motion";
 import { Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -20,7 +20,7 @@ export default function SubmitButton({
   ...props
 }: SubmitButtonProps) {
   return (
-    <motion.button
+    <m.button
       animate={isPending ? { scale: [1, 1.015, 1] } : { scale: 1 }}
       transition={
         isPending ? { duration: 1.4, repeat: Infinity, ease: "easeInOut" } : { duration: 0.2 }
@@ -33,7 +33,7 @@ export default function SubmitButton({
     >
       <AnimatePresence mode="wait" initial={false}>
         {isSuccess ? (
-          <motion.span
+          <m.span
             key="success"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -43,9 +43,9 @@ export default function SubmitButton({
           >
             <Check size={18} strokeWidth={2.5} />
             {children}
-          </motion.span>
+          </m.span>
         ) : (
-          <motion.span
+          <m.span
             key="default"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -53,9 +53,9 @@ export default function SubmitButton({
             transition={{ duration: 0.2 }}
           >
             {children}
-          </motion.span>
+          </m.span>
         )}
       </AnimatePresence>
-    </motion.button>
+    </m.button>
   );
 }

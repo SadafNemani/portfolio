@@ -1,7 +1,7 @@
 "use client";
 
 import { Children, Fragment, isValidElement, useRef, type ReactNode } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 
 import { LOADER_TOTAL_DURATION, LOADER_REDUCED_MOTION_DURATION } from "@/constants/loader";
 
@@ -63,7 +63,7 @@ export default function WordReveal({
 
   if (prefersReducedMotion) {
     return (
-      <motion.span
+      <m.span
         ref={containerRef}
         initial={{ opacity: 0 }}
         animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
@@ -71,7 +71,7 @@ export default function WordReveal({
         className={className}
       >
         {children}
-      </motion.span>
+      </m.span>
     );
   }
 
@@ -90,14 +90,14 @@ export default function WordReveal({
             key={index}
             style={{ display: "inline-block", overflow: "hidden", paddingBottom: "0.15em" }}
           >
-            <motion.span
+            <m.span
               initial={{ y: "110%", opacity: 0 }}
               animate={shouldAnimate ? { y: "0%", opacity: 1 } : { y: "110%", opacity: 0 }}
               transition={{ duration: 0.75, delay: wordDelay, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: "inline-block", marginBottom: "-0.15em" }}
             >
               {token.content}
-            </motion.span>
+            </m.span>
           </span>
         );
       })}
