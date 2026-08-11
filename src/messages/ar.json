@@ -94,6 +94,7 @@
     "sectionTitle": "آراء العملاء",
     "title": "ماذا يقول من <br></br><gradient>عملوا معي</gradient><accent>.</accent>",
     "subtitle": "آراء من عملاء وشركاء عمل أتيحت لي فرصة التعاون معهم.",
+    "viaSource": "عبر {source}",
 
     "items": {
       "client1": {
@@ -154,5 +155,9 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "البريد الإلكتروني"
+  },
+
+  "sourcePlatforms": {
+    "mostaql": "مستقل"
   }
 }

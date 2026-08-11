@@ -94,6 +94,7 @@
     "sectionTitle": "TESTIMONIALS",
     "title": "What clients say about <gradient>my work</gradient><accent>.</accent>",
     "subtitle": "Feedback from clients and collaborators I've had the chance to build with.",
+    "viaSource": "via {source}",
 
     "items": {
       "client1": {
@@ -154,5 +155,9 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "Email"
+  },
+
+  "sourcePlatforms": {
+    "mostaql": "Mostaql"
   }
 }

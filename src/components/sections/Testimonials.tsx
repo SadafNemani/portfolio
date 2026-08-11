@@ -20,13 +20,19 @@ const TestimonialCarousel = dynamic(() => import("../testimonials/TestimonialCar
 
 export default async function Testimonials() {
   const t = await getTranslations("testimonials");
+  const tSourcePlatforms = await getTranslations("sourcePlatforms");
 
   const translatedTestimonials = testimonials.map((testimonial) => ({
     ...testimonial,
     name: t(`items.${testimonial.slug}.name`),
     review: t(`items.${testimonial.slug}.review`),
     workType: t(`items.${testimonial.slug}.workType`),
+    source: testimonial.source
+      ? { ...testimonial.source, name: tSourcePlatforms(testimonial.source.nameKey) } // use tSourcePlatforms, not t
+      : undefined,
   }));
+
+  const viaLabel = t.raw("viaSource");
 
   return (
     <Section id="testimonials" className="relative flex min-h-dvh flex-col overflow-hidden">
@@ -58,7 +64,7 @@ export default async function Testimonials() {
 
         <div className="flex items-center justify-center">
           <LazyMount minHeight="24rem">
-            <TestimonialCarousel testimonials={translatedTestimonials} />
+            <TestimonialCarousel testimonials={translatedTestimonials} viaLabel={viaLabel} />
           </LazyMount>
         </div>
       </Container>

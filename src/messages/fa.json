@@ -21,7 +21,7 @@
   },
   "hero": {
     "sectionTitle": "توسعه‌دهنده فرانت‌اند",
-    "title": "<gradient>حس طراحی</gradient><accent>.</accent> مهارت توسعه<accent>.</accent>",
+    "title": "<gradient>حس طراحی</gradient><accent>.</accent><br></br>مهارت توسعه<accent>.</accent>",
     "subtitle": "من وب‌سایت‌هایی حرفه‌ای و هدفمند می‌سازم که هم زیبا به نظر می‌رسند و هم عالی کار می‌کنند — ترکیبی از سال‌ها تجربه طراحی بصری با تکنیک‌های مدرن فرانت‌اند.",
     "primaryButton": "مشاهده نمونه‌کارها",
     "secondaryButton": "بیایید همکاری کنیم",
@@ -79,6 +79,8 @@
     "sectionTitle": "نظرات مشتریان",
     "title": "نظر مشتریان درباره <gradient>کارهایم</gradient><accent>.</accent>",
     "subtitle": "بازخوردهایی از مشتریان و همکارانی که فرصت همکاری با آن‌ها را داشته‌ام.",
+    "viaSource": "از طریق {source}",
+
     "items": {
       "client1": {
         "name": "نایف آ.",
@@ -131,5 +133,9 @@
     "github": "گیت‌هاب",
     "linkedin": "لینکدین",
     "email": "ایمیل"
+  },
+
+  "sourcePlatforms": {
+    "mostaql": "مستقل"
   }
 }

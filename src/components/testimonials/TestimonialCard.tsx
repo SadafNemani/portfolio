@@ -8,10 +8,12 @@ import { Star } from "lucide-react";
 
 interface TestimonialCardProps extends React.ComponentProps<typeof GlassCard> {
   testimonial: TestimonialContent;
+  viaLabel: string;
 }
 
 export default function TestimonialCard({
   testimonial,
+  viaLabel,
   className,
   ...props
 }: TestimonialCardProps) {
@@ -37,6 +39,16 @@ export default function TestimonialCard({
         <span className="font-regular text-text-secondary text-[14px] leading-[170%] tracking-[-0.03em]">
           {testimonial.workType}
         </span>
+        {testimonial.source && (
+          <a
+            href={testimonial.source.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald mt-1 text-[13px] leading-[170%] font-medium tracking-[-0.03em] hover:underline"
+          >
+            {viaLabel.replace("{source}", testimonial.source.name)}
+          </a>
+        )}
       </div>
     </GlassCard>
   );

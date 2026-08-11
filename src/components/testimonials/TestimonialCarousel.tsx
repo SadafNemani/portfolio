@@ -9,9 +9,10 @@ import { useEffect, useState } from "react";
 
 interface TestimonialCarouselProps {
   testimonials: TestimonialContent[];
+  viaLabel: string;
 }
 
-export default function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
+export default function TestimonialCarousel({ testimonials, viaLabel }: TestimonialCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             ease: "easeInOut",
           }}
         >
-          <TestimonialCard testimonial={testimonials[currentIndex]} />
+          <TestimonialCard testimonial={testimonials[currentIndex]} viaLabel={viaLabel} />
         </m.div>
       </AnimatePresence>
     </div>
