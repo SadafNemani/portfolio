@@ -5,18 +5,17 @@ import { HTMLMotionProps, motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
-const glowAnimation = {
-  boxShadow: [
-    "0 0 12px rgba(52, 211, 153, 0.2), 0 12px 35px rgba(0, 0, 0, 0.25)",
-    "0 0 28px rgba(52, 211, 153, 0.55), 0 12px 35px rgba(0, 0, 0, 0.25)",
-    "0 0 12px rgba(52, 211, 153, 0.2), 0 12px 35px rgba(0, 0, 0, 0.25)",
-  ],
+const buttonClassName =
+  "rounded-button gradient-button-background border-border text-body relative isolate inline-flex cursor-pointer items-center justify-center border px-7 py-4 leading-6 font-semibold tracking-[-0.03em] text-white";
+
+const glowLayerClassName = "rounded-button pointer-events-none absolute inset-0 -z-10";
+
+const glowStyle = {
+  boxShadow: "0 0 28px rgba(52, 211, 153, 0.55), 0 12px 35px rgba(0, 0, 0, 0.25)",
 };
 
+const glowAnimation = { opacity: [0.3, 1, 0.3] };
 const glowTransition = { duration: 2.2, repeat: Infinity, ease: "easeInOut" as const };
-
-const buttonClassName =
-  "rounded-button gradient-button-background border-border text-body inline-flex cursor-pointer items-center justify-center border px-7 py-4 leading-6 font-semibold tracking-[-0.03em] text-white";
 
 interface PrimaryButtonBaseProps {
   children: ReactNode;
@@ -43,13 +42,18 @@ export default function PrimaryButton({ children, className, ...props }: Primary
     return (
       <motion.a
         href={href}
-        animate={glowAnimation}
-        transition={glowTransition}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         className={cn(buttonClassName, className)}
         {...linkProps}
       >
+        <motion.span
+          aria-hidden="true"
+          className={glowLayerClassName}
+          style={glowStyle}
+          animate={glowAnimation}
+          transition={glowTransition}
+        />
         {children}
       </motion.a>
     );
@@ -60,13 +64,18 @@ export default function PrimaryButton({ children, className, ...props }: Primary
   return (
     <motion.button
       type={type}
-      animate={glowAnimation}
-      transition={glowTransition}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={cn(buttonClassName, className)}
       {...buttonProps}
     >
+      <motion.span
+        aria-hidden="true"
+        className={glowLayerClassName}
+        style={glowStyle}
+        animate={glowAnimation}
+        transition={glowTransition}
+      />
       {children}
     </motion.button>
   );
