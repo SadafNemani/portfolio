@@ -45,6 +45,7 @@ export async function generateMetadata({
       languages: {
         en: `${siteUrl}/en`,
         ar: `${siteUrl}/ar`,
+        fa: `${siteUrl}/fa`,
         "x-default": `${siteUrl}/en`,
       },
     },
@@ -60,7 +61,7 @@ export async function generateMetadata({
           height: 630,
         },
       ],
-      locale: locale === "ar" ? "ar_SA" : "en_US",
+      locale: locale === "ar" ? "ar_SA" : locale === "fa" ? "fa_IR" : "en_US",
       type: "website",
     },
     twitter: {
