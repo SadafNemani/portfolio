@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+import LazyMount from "../system/LazyMount";
+
 import { getTranslations } from "next-intl/server";
 
 import Container from "@/components/layout/Container";
@@ -7,14 +10,20 @@ import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
-import TechnologyNode from "../technologies/TechnologyNode";
 import { technologies, technologyCategories } from "@/data/technologies";
 import Reveal from "../motion/Reveal";
 import WordReveal from "../motion/WordReveal";
-import PillReveal from "../motion/PillReveal";
+import { TechnologyCategory } from "@/types/technologies";
+import { ReactNode } from "react";
+
+const TechnologyGrid = dynamic(() => import("../technologies/TechnologyGrid"));
 
 export default async function Technologies() {
   const t = await getTranslations("technologies");
+
+  const categoryLabels = Object.fromEntries(
+    technologyCategories.map((category) => [category, t.rich(`categories.${category}`, richText)])
+  ) as Record<TechnologyCategory, ReactNode>;
 
   return (
     <Section id="technologies" className="relative flex min-h-dvh flex-col overflow-hidden">
@@ -35,33 +44,13 @@ export default async function Technologies() {
           </Reveal>
         </SectionHeader>
 
-        <div className="flex flex-col gap-10">
-          {technologyCategories.map((category, categoryIndex) => {
-            const categoryTechnologies = technologies.filter(
-              (technology) => technology.category === category
-            );
-
-            return (
-              <div key={category} className="flex flex-col gap-4">
-                <div className="flex flex-col items-center gap-4">
-                  <Reveal gate={false} delay={categoryIndex * 0.1} y={12}>
-                    <span className="text-text-secondary border-b-border text-section-description border-b font-semibold">
-                      {t.rich(`categories.${category}`, richText)}
-                    </span>
-                  </Reveal>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  {categoryTechnologies.map((technology, techIndex) => (
-                    <PillReveal key={technology.id} delay={categoryIndex * 0.1 + techIndex * 0.05}>
-                      <TechnologyNode key={technology.id} technology={technology} />
-                    </PillReveal>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <LazyMount minHeight="30rem">
+          <TechnologyGrid
+            categories={technologyCategories}
+            technologies={technologies}
+            categoryLabels={categoryLabels}
+          />
+        </LazyMount>
       </Container>
     </Section>
   );

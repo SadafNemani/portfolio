@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+import LazyMount from "../system/LazyMount";
+
 import { getTranslations } from "next-intl/server";
 
 import Container from "@/components/layout/Container";
@@ -8,11 +11,12 @@ import SectionLabel from "@/components/typography/SectionLabel";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import { QuoteIcon } from "lucide-react";
-import TestimonialCarousel from "../testimonials/TestimonialCarousel";
 import { testimonials } from "@/data/testimonials";
 import Reveal from "../motion/Reveal";
 import WordReveal from "../motion/WordReveal";
 import QuoteMarkReveal from "../motion/QuoteMarkReveal";
+
+const TestimonialCarousel = dynamic(() => import("../testimonials/TestimonialCarousel"));
 
 export default async function Testimonials() {
   const t = await getTranslations("testimonials");
@@ -53,7 +57,9 @@ export default async function Testimonials() {
         </SectionHeader>
 
         <div className="flex items-center justify-center">
-          <TestimonialCarousel testimonials={translatedTestimonials} />
+          <LazyMount minHeight="24rem">
+            <TestimonialCarousel testimonials={translatedTestimonials} />
+          </LazyMount>
         </div>
       </Container>
     </Section>

@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+import LazyMount from "../system/LazyMount";
+
 import { getTranslations } from "next-intl/server";
 
 import Section from "@/components/layout/Section";
@@ -5,11 +8,12 @@ import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
-import ProjectShowcase from "../projects/ProjectShowcase";
 import { projects } from "@/data/projects";
 import ComingSoonState from "../ui/ComingSoonState";
 import Reveal from "../motion/Reveal";
 import WordReveal from "../motion/WordReveal";
+
+const ProjectShowcase = dynamic(() => import("../projects/ProjectShowcase"));
 
 export default async function Projects() {
   const t = await getTranslations("projects");
@@ -43,7 +47,9 @@ export default async function Projects() {
   return (
     <Section id="projects" className="relative">
       {translatedProjects.length > 0 ? (
-        <ProjectShowcase projects={translatedProjects} labels={projectLabels} heading={heading} />
+        <LazyMount minHeight="100vh">
+          <ProjectShowcase projects={translatedProjects} labels={projectLabels} heading={heading} />
+        </LazyMount>
       ) : (
         <ComingSoonState heading={heading} />
       )}
