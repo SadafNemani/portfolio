@@ -49,8 +49,9 @@ export default async function About() {
             src="/images/sadaf_nemani.jpg"
             alt={t("imageAlt")}
             fill
+            quality={90}
             className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 33vw"
+            sizes="(max-width: 1024px) 100vw, 344px"
           />
         </ImageReveal>
       </Container>
