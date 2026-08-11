@@ -22,22 +22,28 @@ export default async function Hero() {
       <Container className="relative flex flex-1 flex-col">
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10 px-2 py-16 text-center sm:gap-12 sm:py-24 lg:py-36">
           <SectionHeader className="items-center">
-            <Reveal delay={0} gate={false}>
+            <Reveal delay={0} gate={false} triggerOnView={false}>
               <SectionLabel>{t("sectionTitle")}</SectionLabel>
             </Reveal>
 
             <SectionHeading className="text-hero-title! max-w-[18ch]">
-              <WordReveal delay={0.1} wordStagger={0.05} gate={false}>
+              <WordReveal
+                delay={0.05}
+                wordStagger={0.03}
+                duration={0.5}
+                gate={false}
+                triggerOnView={false}
+              >
                 {t.rich("title", richText)}
               </WordReveal>
             </SectionHeading>
 
-            <Reveal delay={0.5} gate={false}>
+            <Reveal delay={0.3} duration={0.5} gate={false} triggerOnView={false}>
               <SectionDescription className="max-w-[52ch]">{t("subtitle")}</SectionDescription>
             </Reveal>
           </SectionHeader>
 
-          <Reveal delay={1} gate={false}>
+          <Reveal delay={0.5} gate={false} triggerOnView={false}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton type="button" href="#projects">
                 {t("primaryButton")}
@@ -48,7 +54,7 @@ export default async function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={2.3}>
+          <Reveal delay={0.7} gate={false} triggerOnView={false}>
             <ScrollIndicator href="#about" icon={<ChevronDown size={22} strokeWidth={2} />}>
               {t("scrollIndicator")}
             </ScrollIndicator>

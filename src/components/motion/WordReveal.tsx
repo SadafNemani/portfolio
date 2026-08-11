@@ -9,8 +9,10 @@ interface WordRevealProps {
   children: ReactNode;
   delay?: number;
   wordStagger?: number;
+  duration?: number;
   className?: string;
   gate?: boolean;
+  triggerOnView?: boolean;
 }
 
 type Token =
@@ -48,8 +50,10 @@ export default function WordReveal({
   children,
   delay = 0,
   wordStagger = 0.08,
+  duration = 0.75,
   className,
   gate = true,
+  triggerOnView = true,
 }: WordRevealProps) {
   const containerRef = useRef<HTMLSpanElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
@@ -59,7 +63,7 @@ export default function WordReveal({
     ? (prefersReducedMotion ? LOADER_REDUCED_MOTION_DURATION : LOADER_TOTAL_DURATION) / 1000
     : 0;
 
-  const shouldAnimate = gate ? true : isInView;
+  const shouldAnimate = gate ? true : triggerOnView ? isInView : true;
 
   if (prefersReducedMotion) {
     return (
@@ -93,7 +97,7 @@ export default function WordReveal({
             <m.span
               initial={{ y: "110%", opacity: 0 }}
               animate={shouldAnimate ? { y: "0%", opacity: 1 } : { y: "110%", opacity: 0 }}
-              transition={{ duration: 0.75, delay: wordDelay, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration, delay: wordDelay, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: "inline-block", marginBottom: "-0.15em" }}
             >
               {token.content}

@@ -12,6 +12,7 @@ interface RevealProps {
   duration?: number;
   className?: string;
   gate?: boolean;
+  triggerOnView?: boolean;
 }
 
 export default function Reveal({
@@ -21,6 +22,7 @@ export default function Reveal({
   duration = 1,
   className,
   gate = true,
+  triggerOnView = true,
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -28,12 +30,14 @@ export default function Reveal({
     ? (prefersReducedMotion ? LOADER_REDUCED_MOTION_DURATION : LOADER_TOTAL_DURATION) / 1000
     : 0;
 
+  const useViewTrigger = !gate && triggerOnView;
+
   return (
     <m.div
       initial={{ opacity: 0, y: prefersReducedMotion ? 0 : y }}
-      whileInView={gate ? undefined : { opacity: 1, y: 0 }}
-      animate={gate ? { opacity: 1, y: 0 } : undefined}
-      viewport={gate ? undefined : { once: true, amount: 0.3 }}
+      whileInView={useViewTrigger ? { opacity: 1, y: 0 } : undefined}
+      animate={!useViewTrigger ? { opacity: 1, y: 0 } : undefined}
+      viewport={useViewTrigger ? { once: true, amount: 0.3 } : undefined}
       transition={{
         duration: prefersReducedMotion ? 0.3 : duration,
         delay: baseDelay + delay,
