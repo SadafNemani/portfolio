@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sadaf Nemani — Portfolio
 
-## Getting Started
+Multilingual (EN/FA/AR) personal portfolio built with Next.js, TypeScript, and Tailwind CSS — featuring RTL support, animated transitions, and an interactive project showcase.
 
-First, run the development server:
+[Live Site](#) · [LinkedIn](#) · [GitHub](#)
+
+## ✨ Features
+
+- Multilingual support with full RTL for English, Persian, and Arabic
+- Responsive design across desktop, tablet, and mobile
+- Animated hero and section transitions with Framer Motion
+- Interactive project showcase and auto-playing testimonials carousel
+- Contact form
+- Glassmorphism-inspired UI
+- SEO optimized, accessible, and performance-focused
+
+## 🛠️ Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- next-intl
+- Lucide React
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                # Next.js app router
+│   └── [locale]/       # Localized routes (en, fa, ar)
+│       └── actions/    # Server actions
+├── components/
+│   ├── about/
+│   ├── contact/
+│   ├── hero/
+│   ├── layout/
+│   ├── motion/         # Animation wrappers
+│   ├── navigation/
+│   ├── projects/
+│   ├── sections/
+│   ├── seo/
+│   ├── system/
+│   ├── technologies/
+│   ├── testimonials/
+│   ├── typography/
+│   └── ui/             # Reusable UI primitives
+├── constants/
+├── data/                # Static content (projects, testimonials, etc.)
+├── hooks/
+├── i18n/                # Locale/routing config
+├── lib/
+│   └── validation/      # Form/schema validation
+├── messages/            # Translation files (en/fa/ar)
+├── types/
+└── utils/
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🌍 Localization
 
-To learn more about Next.js, take a look at the following resources:
+The website currently supports:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- English (`en`)
+- Persian (`fa`)
+- Arabic (`ar`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design & Development
 
-## Deploy on Vercel
+This portfolio was designed and developed from scratch with a focus on:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Visual hierarchy
+- Responsive layouts
+- Reusable components
+- Maintainable architecture
+- Smooth interactions
+- Performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contact
+
+**Sadaf Nemani**
+
+- Portfolio: `<your deployed URL>`
+- GitHub: [@SadafNemani](https://github.com/SadafNemani)
+- LinkedIn: [Sadaf Nemani](https://linkedin.com/in/sadaf-nemani-59b839291)
+- Email: [sedefnemani@gmail.com](mailto:sedefnemani@gmail.com)
+
+## 📄 License
+
+The code in this repository is licensed under the [MIT License](LICENSE).
+Content (text, images, project descriptions, and design) is © Sadaf Nemani and is not covered by this license.
