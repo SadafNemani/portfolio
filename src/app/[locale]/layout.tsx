@@ -82,7 +82,8 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
-  const isRTL = locale === "ar" || "fa";
+  const RTL_LOCALES: Locale[] = ["ar", "fa"];
+  const isRTL = RTL_LOCALES.includes(locale as Locale);
 
   return (
     <html
