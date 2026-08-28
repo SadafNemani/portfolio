@@ -18,7 +18,7 @@ import ScrollToTopButton from "@/components/system/ScrollToTopButton";
 
 import MotionProvider from "@/components/system/MotionProvider";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sadafnemani.netlify.app";
 
 type Props = {
   children: React.ReactNode;
@@ -40,6 +40,9 @@ export async function generateMetadata({
     title,
     description,
     metadataBase: new URL(siteUrl),
+    verification: {
+      google: "OWUXuYUwpWgG6w9ZFgrcKEaE4eeF8m4bgsrkO5tf1zk",
+    },
     alternates: {
       canonical: `${siteUrl}/${locale}`,
       languages: {

@@ -1,6 +1,6 @@
 import { socials } from "@/data/socials";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sadafnemani.netlify.app";
 
 export default function PersonJsonLd() {
   const sameAs = socials
