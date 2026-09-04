@@ -9,12 +9,14 @@ import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
 
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 interface ProjectCardProps extends React.ComponentProps<typeof GlassCard> {
   project: ProjectContent;
   labels: {
     liveButton: string;
     githubButton: string;
+    caseStudyLink: string;
   };
 }
 
@@ -32,9 +34,35 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
           {project.category}
         </span>
 
-        <h3 className="text-text-primary text-project-title font-bold">{project.title}</h3>
+        <h3 className="text-text-primary text-project-title font-bold">
+          {project.hasCaseStudy ? (
+            <Link
+              href={`/projects/${project.slug}`}
+              className="hover:text-emerald-light transition-colors"
+            >
+              {project.title}
+            </Link>
+          ) : (
+            project.title
+          )}
+        </h3>
 
         <p className="text-text-secondary text-body font-medium">{project.description}</p>
+
+        {project.scope && project.scope.length > 0 && (
+          <ul className="text-text-secondary flex flex-wrap gap-x-2 gap-y-1 text-sm">
+            {project.scope.map((item, i) => (
+              <li key={item} className="flex items-center gap-2">
+                {item}
+                {i < project.scope!.length - 1 && (
+                  <span aria-hidden className="text-text-secondary/40">
+                    .
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((technologyId) => {
@@ -44,7 +72,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
           })}
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           {project.live && (
             <a
               href={project.live}
@@ -66,6 +94,16 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
             >
               <SecondaryButton type="button">{labels.githubButton}</SecondaryButton>
             </a>
+          )}
+          {project.hasCaseStudy && (
+            <Link
+              href={`/projects/${project.slug}`}
+              className="text-emerald-light hover:text-emerald text-body-sm font-medium underline-offset-4 transition-colors hover:underline"
+              data-cursor="special"
+              data-cursor-text="Read case study ↗"
+            >
+              {labels.caseStudyLink}
+            </Link>
           )}
         </div>
       </div>

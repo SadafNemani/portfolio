@@ -20,6 +20,7 @@ interface ProjectShowcaseProps {
   labels: {
     liveButton: string;
     githubButton: string;
+    caseStudyLink: string;
   };
   heading: ReactNode;
 }

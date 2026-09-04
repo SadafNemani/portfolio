@@ -15,4 +15,6 @@ export interface ProjectContent extends Project {
   title: string;
   category: string;
   description: string;
+  scope?: string[];
+  hasCaseStudy?: boolean;
 }
