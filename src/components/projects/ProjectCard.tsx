@@ -8,8 +8,9 @@ import { getTechnology } from "@/lib/getTechnology";
 import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
 
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+
+import ScrollingScreenshot from "../case-study/ScrollingScreenshot";
 
 interface ProjectCardProps extends React.ComponentProps<typeof GlassCard> {
   project: ProjectContent;
@@ -98,7 +99,7 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
           {project.hasCaseStudy && (
             <Link
               href={`/projects/${project.slug}`}
-              className="text-emerald-light hover:text-emerald text-body-sm font-medium underline-offset-4 transition-colors hover:underline"
+              className="text-emerald-light hover:text-emerald text-body-sm -mt-4 font-medium underline-offset-4 transition-colors hover:underline"
               data-cursor="special"
               data-cursor-text="Read case study ↗"
             >
@@ -109,12 +110,10 @@ export default function ProjectCard({ project, labels, className, ...props }: Pr
       </div>
 
       <div className="bg-glass rounded-card shadow-button relative h-40 shrink-0 overflow-hidden px-6 py-2.5 backdrop-blur-2xl lg:h-full lg:flex-1">
-        <Image
+        <ScrollingScreenshot
           src={project.thumbnail}
           alt={project.title}
-          width={700}
-          height={500}
-          className="rounded-card h-full w-full object-cover"
+          className="rounded-card h-full w-full"
         />
       </div>
     </GlassCard>

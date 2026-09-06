@@ -23,11 +23,13 @@ export default async function Projects() {
     title: t(`items.${project.slug}.title`),
     category: t(`items.${project.slug}.category`),
     description: t(`items.${project.slug}.description`),
+    scope: t.raw(`items.${project.slug}.scope`) as string[],
   }));
 
   const projectLabels = {
     liveButton: t("items.liveButton"),
     githubButton: t("items.githubButton"),
+    caseStudyLink: t("items.caseStudyLink"),
   };
 
   const heading = (
