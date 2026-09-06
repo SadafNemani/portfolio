@@ -8,6 +8,7 @@ import Image from "next/image";
 import { socials } from "@/data/socials";
 import SocialLink from "@/components/ui/SocialLink";
 import { richText } from "@/lib/richText";
+import { Link } from "@/i18n/navigation";
 
 export default async function Footer() {
   const t = await getTranslations();
@@ -44,13 +45,13 @@ export default async function Footer() {
 
             <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 px-4">
               {NAVIGATION_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item}
-                  href={`#${item}`}
+                  href={`/#${item}`}
                   className="text-body text-text-secondary hover:text-text-primary relative font-medium tracking-[-0.02em] transition-colors duration-300"
                 >
                   {t(`navigation.${item}`)}
-                </a>
+                </Link>
               ))}
             </nav>
 

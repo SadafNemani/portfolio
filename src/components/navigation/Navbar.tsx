@@ -11,6 +11,7 @@ import { m } from "framer-motion";
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 type NavbarProps = React.ComponentProps<"header">;
 
@@ -19,7 +20,7 @@ export default function Navbar({ className, ...props }: NavbarProps) {
   const activeId = useActiveSection([...NAVIGATION_ITEMS]);
 
   const navItems = NAVIGATION_ITEMS.map((item) => ({
-    href: `#${item}`,
+    href: `/#${item}`,
     id: item,
     label: t(item),
   }));
@@ -45,7 +46,7 @@ export default function Navbar({ className, ...props }: NavbarProps) {
 
       <nav className="hidden items-center justify-center gap-7 px-4 lg:flex">
         {navItems.map((item) => (
-          <a
+          <Link
             key={item.href}
             href={item.href}
             className={cn(
@@ -63,7 +64,7 @@ export default function Navbar({ className, ...props }: NavbarProps) {
                 transition={{ type: "spring", stiffness: 280, damping: 32 }}
               />
             )}
-          </a>
+          </Link>
         ))}
       </nav>
 
