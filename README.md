@@ -2,7 +2,7 @@
 
 Multilingual (EN/FA/AR) personal portfolio built with Next.js, TypeScript, and Tailwind CSS — featuring RTL support, animated transitions, and an interactive project showcase.
 
-[Live Site](#) · [LinkedIn](#) · [GitHub](#)
+[Live Site](https://sadafnemani.netlify.app) · [LinkedIn](https://linkedin.com/in/sadaf-nemani-59b839291) · [GitHub](https://github.com/SadafNemani)
 
 ## ✨ Features
 
@@ -110,7 +110,7 @@ This portfolio was designed and developed from scratch with a focus on:
 
 **Sadaf Nemani**
 
-- Portfolio: `<your deployed URL>`
+- Portfolio: [sadafnemani.netlify.app](https://sadafnemani.netlify.app)
 - GitHub: [@SadafNemani](https://github.com/SadafNemani)
 - LinkedIn: [Sadaf Nemani](https://linkedin.com/in/sadaf-nemani-59b839291)
 - Email: [sedefnemani@gmail.com](mailto:sedefnemani@gmail.com)
