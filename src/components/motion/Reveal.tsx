@@ -13,6 +13,9 @@ interface RevealProps {
   className?: string;
   gate?: boolean;
   triggerOnView?: boolean;
+  amount?: number;
+  margin?: string;
+  once?: boolean;
 }
 
 export default function Reveal({
@@ -23,6 +26,9 @@ export default function Reveal({
   className,
   gate = true,
   triggerOnView = true,
+  amount = 0.3,
+  margin = "0px",
+  once = true,
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -37,7 +43,7 @@ export default function Reveal({
       initial={{ opacity: 0, y: prefersReducedMotion ? 0 : y }}
       whileInView={useViewTrigger ? { opacity: 1, y: 0 } : undefined}
       animate={!useViewTrigger ? { opacity: 1, y: 0 } : undefined}
-      viewport={useViewTrigger ? { once: true, amount: 0.3 } : undefined}
+      viewport={useViewTrigger ? { once, amount, margin } : undefined}
       transition={{
         duration: prefersReducedMotion ? 0.3 : duration,
         delay: baseDelay + delay,

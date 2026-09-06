@@ -6,9 +6,10 @@ import { m, useReducedMotion } from "framer-motion";
 interface PillRevealProps {
   children: ReactNode;
   delay?: number;
+  once?: boolean;
 }
 
-export default function PillReveal({ children, delay = 0 }: PillRevealProps) {
+export default function PillReveal({ children, delay = 0, once = true }: PillRevealProps) {
   const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
@@ -16,7 +17,7 @@ export default function PillReveal({ children, delay = 0 }: PillRevealProps) {
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once, amount: 0.4 }}
         transition={{ duration: 0.3, delay }}
       >
         {children}
