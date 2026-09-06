@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useRef, useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useReducedMotion, m } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface ScrollingScreenshotProps {
   src: string;
@@ -12,16 +13,18 @@ interface ScrollingScreenshotProps {
 
 export default function ScrollingScreenshot({ src, alt, className }: ScrollingScreenshotProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement | null>(null);
   const [scrollDistance, setScrollDistance] = useState(0);
-  const [duration, setDuraion] = useState(6);
+  const [duration, setDuration] = useState(6);
   const [isHovering, setIsHovering] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  const measure = useCallback(() => {
+  const hasHover = useMediaQuery("(hover: hover) and (pointer: fine)");
+  const isInView = useInView(containerRef, { once: true, amount: 0.4 });
+  const hasAutoPlayed = useRef(false);
+
+  const handleLoad = useCallback((img: HTMLImageElement) => {
     const container = containerRef.current;
-    const img = imgRef.current;
-    if (!container || !img || !img.naturalWidth) return;
+    if (!container) return;
 
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
@@ -29,23 +32,30 @@ export default function ScrollingScreenshot({ src, alt, className }: ScrollingSc
     const distance = Math.max(renderedHeight - containerHeight, 0);
 
     setScrollDistance(distance);
-    setDuraion(Math.min(Math.max(distance / 140, 3), 14));
+    setDuration(Math.min(Math.max(distance / 140, 3), 14));
   }, []);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver(measure);
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, [measure]);
+    if (hasHover || prefersReducedMotion) return;
+    if (!isInView || scrollDistance === 0 || hasAutoPlayed.current) return;
+
+    hasAutoPlayed.current = true;
+    const holdMs = 900;
+    const playTimer = setTimeout(() => setIsHovering(true), 400);
+    const resetTimer = setTimeout(() => setIsHovering(false), 400 + duration * 1000 + holdMs);
+
+    return () => {
+      clearTimeout(playTimer);
+      clearTimeout(resetTimer);
+    };
+  }, [hasHover, prefersReducedMotion, isInView, scrollDistance, duration]);
 
   return (
     <div
       ref={containerRef}
       className={`relative overflow-hidden ${className ?? ""}`}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseEnter={hasHover ? () => setIsHovering(true) : undefined}
+      onMouseLeave={hasHover ? () => setIsHovering(false) : undefined}
     >
       <m.div
         animate={{ y: isHovering && !prefersReducedMotion ? -scrollDistance : 0 }}
@@ -62,8 +72,7 @@ export default function ScrollingScreenshot({ src, alt, className }: ScrollingSc
           height={0}
           sizes="100vw"
           className="h-auto w-full"
-          ref={imgRef}
-          onLoad={measure}
+          onLoad={(e) => handleLoad(e.currentTarget)}
         />
       </m.div>
     </div>

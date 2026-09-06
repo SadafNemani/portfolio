@@ -49,36 +49,52 @@ export default function ProjectShowcase({ projects, labels, heading }: ProjectSh
   });
 
   return (
-    <div ref={scrollRef} className="relative" style={{ height: `${projects.length * 100}vh` }}>
-      <div className="sticky top-(--navbar-clearance) h-[calc(100dvh-(--navbar-clearance))] overflow-hidden py-16 sm:py-20 lg:py-28">
-        {" "}
-        <Container className="relative flex h-full min-h-0 flex-col">
+    <>
+      <div className="lg:hidden">
+        <Container className="flex flex-col gap-8">
           <div className="relative z-10">{heading}</div>
-
-          <div className="pointer-events-none absolute inset-0 z-0 flex justify-end">
-            <PaginationNumber value={currentIndex + 1} />
-          </div>
-
-          <div className="relative z-10 mt-7.5 min-h-0 overflow-hidden">
-            <div
-              className="relative mx-auto w-full max-w-300"
-              style={{ height: "clamp(460px, 62dvh, 560px)" }}
-            >
-              {projects.map((project, index) => (
-                <StackedCard
-                  key={project.slug}
-                  index={index}
-                  total={projects.length}
-                  progress={smoothProgress}
-                >
-                  <ProjectCard project={project} labels={labels} />
-                </StackedCard>
-              ))}
-            </div>
+          <div className="flex flex-col gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} labels={labels} />
+            ))}
           </div>
         </Container>
       </div>
-    </div>
+
+      <div
+        ref={scrollRef}
+        className="relative hidden lg:block"
+        style={{ height: `${projects.length * 100}vh` }}
+      >
+        <div className="sticky top-(--navbar-clearance) h-[calc(100dvh-(--navbar-clearance))] overflow-hidden py-16 sm:py-20 lg:py-28">
+          <Container className="relative flex h-full min-h-0 flex-col">
+            <div className="relative z-10">{heading}</div>
+
+            <div className="pointer-events-none absolute inset-0 z-0 flex justify-end">
+              <PaginationNumber value={currentIndex + 1} />
+            </div>
+
+            <div className="relative z-10 mt-7.5 min-h-0 overflow-hidden">
+              <div
+                className="relative mx-auto w-full max-w-300"
+                style={{ height: "clamp(460px, 62dvh, 560px)" }}
+              >
+                {projects.map((project, index) => (
+                  <StackedCard
+                    key={project.slug}
+                    index={index}
+                    total={projects.length}
+                    progress={smoothProgress}
+                  >
+                    <ProjectCard project={project} labels={labels} />
+                  </StackedCard>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </div>
+      </div>
+    </>
   );
 }
 
