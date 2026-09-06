@@ -8,11 +8,11 @@ import SectionHeading from "@/components/typography/SectionHeading";
 import SectionLabel from "@/components/typography/SectionLabel";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
-import SecondaryButton from "@/components/ui/SecondaryButton";
 import { richText } from "@/lib/richText";
 import SectionHeader from "../layout/SectionHeader";
 import Reveal from "../motion/Reveal";
 import WordReveal from "../motion/WordReveal";
+import GhostButton from "../ui/GhostButton";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -48,9 +48,9 @@ export default async function Hero() {
               <PrimaryButton type="button" href="#projects">
                 {t("primaryButton")}
               </PrimaryButton>
-              <SecondaryButton type="button" href="#contact">
+              <GhostButton type="button" href="#contact">
                 {t("secondaryButton")}
-              </SecondaryButton>
+              </GhostButton>
             </div>
           </Reveal>
 
