@@ -25,7 +25,7 @@
   "hero": {
     "sectionTitle": "FRONTEND DEVELOPER",
     "title": "<gradient>Design instincts</gradient><accent>.</accent> Developer skills<accent>.</accent>",
-    "subtitle": "I create polished, purposeful websites that look great and work beautifully — combining years of visual design experience with modern frontend craft.",
+    "subtitle": "I started in WordPress and visual design — now I bring that same eye for craft to fast, modern sites built with React and Next.js.",
     "primaryButton": "View my work",
     "secondaryButton": "Let's work together",
     "scrollIndicator": "Scroll to Explore"
@@ -56,7 +56,7 @@
 
       "reliable": {
         "title": "Reliable",
-        "subtitle": "Communication, responsibility and meeting deadlines matter."
+        "subtitle": "Replies within a day, clear updates along the way, and deadlines that hold."
       }
     }
   },
@@ -155,7 +155,7 @@
     "myName": "Sadaf Nemani",
     "mySpecialty": "Frontend Developer",
     "copyright": "© 2026 Sadaf Nemani",
-    "footerDetails": "Designed & built with Next.js — and a love for good design."
+    "footerDetails": "Built with Next.js, with the same care I put into client work."
   },
 
   "socials": {
