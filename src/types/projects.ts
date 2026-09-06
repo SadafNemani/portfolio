@@ -9,6 +9,7 @@ export interface Project {
   live?: string;
   featured: boolean;
   order: number;
+  hasCaseStudy?: boolean;
 }
 
 export interface ProjectContent extends Project {
@@ -16,5 +17,4 @@ export interface ProjectContent extends Project {
   category: string;
   description: string;
   scope?: string[];
-  hasCaseStudy?: boolean;
 }

@@ -80,7 +80,14 @@
 
     "items": {
       "liveButton": "See Live",
-      "githubButton": "See Source Code"
+      "githubButton": "See Source Code",
+      "caseStudyLink": "Read case study",
+      "bun-and-fire": {
+        "title": "Bun & Fire",
+        "category": "Concept · Food & Beverage",
+        "description": "A concept ordering site for local fast-food spots — scan the QR code, order, done.",
+        "scope": ["5 pages", "Guest checkout", "WhatsApp delivery"]
+      }
     },
 
     "comingSoon": {
@@ -159,5 +166,146 @@
 
   "sourcePlatforms": {
     "mostaql": "Mostaql"
+  },
+
+  "caseStudy": {
+    "shared": {
+      "backlink": "Back to Projects",
+      "liveButton": "View Live Demo",
+      "githubButton": "View Code",
+      "factsRole": "Role",
+      "factsTimeline": "Timeline",
+      "factsPages": "Pages",
+      "factsType": "Type",
+      "problemLabel": "The Problem",
+      "approachLabel": "The Approach",
+      "featuresLabel": "How It Came Together",
+      "stackLabel": "Stack & Decisions",
+      "tokensLabel": "Own Design Tokens",
+      "galleryLabel": "Screens",
+      "reflectionLabel": "What's Next",
+      "ctaHeading": "Have something like this in mind?",
+      "ctaDescription": "I'm open to freelance projects — let's talk about what you're building.",
+      "ctaButton": "Let's work together"
+    },
+    "bun-and-fire": {
+      "type": "Personal Showcase Project",
+      "hero": {
+        "title": "<gradient>Bun & Fire</gradient><accent>.</accent>",
+        "tagline": "Turning a static QR menu into a real ordering flow."
+      },
+      "facts": {
+        "role": "Frontend Design & Development",
+        "timeline": "Solo build",
+        "pages": "5"
+      },
+      "overview": {
+        "problem": "Most small food businesses hand customers a QR code that just opens a static image of the menu. It looks modern, but nothing actually changes — the customer still has to call, wave someone down, or wait for a server to take the order by hand.",
+        "solution": "Bun & Fire replaces that flat image with a real ordering flow. The QR code opens a menu customers can browse, filter, and add to a cart. At checkout they give just a name and phone number — no account, no app download — and the order lands directly in the owner's WhatsApp as a formatted message, ready to send."
+      },
+      "features": {
+        "heading": "Built to be used, not toured",
+        "items": [
+          {
+            "title": "Guest Checkout",
+            "description": "No accounts, no passwords. A name and phone number are the only thing standing between browsing and a placed order."
+          },
+          {
+            "title": "WhatsApp Delivery",
+            "description": "Orders arrive as a pre-filled WhatsApp message — the same tool most small restaurant owners already run their business on. No dashboard, no login, no new habit to learn."
+          },
+          {
+            "title": "Menu Filtering & Sorting",
+            "description": "Items are categorized, sortable by popularity or newest, and revealed progressively — so a menu with dozens of items still feels quick to scan on a phone."
+          },
+          {
+            "title": "Mobile-First, Everywhere",
+            "description": "Built for the one place this actually gets used: someone's phone, at a table, right after scanning a code. Every interaction — including a bottom-sheet cart and a floating category picker — was designed hand-first."
+          },
+          {
+            "title": "A Living Interface",
+            "description": "A custom animated cursor, paint-wipe page transitions, and motion-driven feedback on every add-to-cart make the site feel like a real product, not a template."
+          },
+          {
+            "title": "Fast & Lightweight",
+            "description": "No backend, no database, no auth — just a lean build that loads quickly even on restaurant wifi."
+          }
+        ]
+      },
+      "process": {
+        "heading": "Four build phases",
+        "steps": [
+          {
+            "title": "Design system first",
+            "description": "Color, type, spacing, and radius were all defined as reusable tokens before a single page was built — so nothing downstream was one-off."
+          },
+          {
+            "title": "Typography & UI kit",
+            "description": "Shared primitives — buttons, cards, badges, form fields — came before pages, so every screen after reused the same building blocks instead of duplicating styles."
+          },
+          {
+            "title": "Core flow: menu → cart → order",
+            "description": "The entire ordering path was built and working end to end — browse, add to cart, check out as a guest, confirm — before any visual polish."
+          },
+          {
+            "title": "Motion & performance pass",
+            "description": "A full motion layer was added last: page transitions, scroll reveals, cart feedback, and a custom cursor — then measured and tuned with Lighthouse until the added polish didn't cost real performance."
+          }
+        ]
+      },
+      "stack": {
+        "heading": "Why this stack",
+        "reasons": [
+          {
+            "name": "Next.js",
+            "reason": "App Router's file-based routing fit the 5-page flow naturally, with built-in image optimization for a menu full of photos."
+          },
+          {
+            "name": "TypeScript",
+            "reason": "A typed menu, cart, and order model caught real mistakes early — especially once quantity math and combo pricing got involved."
+          },
+          {
+            "name": "Tailwind CSS v4",
+            "reason": "CSS-first design tokens kept color, radius, and type scale consistent across every component, with zero drift."
+          },
+          {
+            "name": "Framer Motion",
+            "reason": "Used deliberately and extensively — not decoration, but the thing that makes cart feedback, page transitions, and hover states feel like a real product."
+          }
+        ]
+      },
+      "decisions": {
+        "heading": "Deliberate trade-offs, not oversights",
+        "items": [
+          {
+            "title": "WhatsApp over a backend",
+            "text": "Truly silent, automatic order delivery would require the paid WhatsApp Business API and a real backend to call it — which directly contradicts this project's own premise of staying simple enough for a small owner to actually use. The 'wa.me' deep-link approach pre-fills a formatted order message and needs one tap to send, mirroring how many small restaurants already run their business today."
+          },
+          {
+            "title": "No accounts, ever",
+            "text": "Every account system is friction between a hungry customer and a placed order. Guest checkout — just a name and phone number — was chosen deliberately over any login flow, even though it means no order history or saved addresses. For a QR-scan-and-order flow, that trade-off is the right one."
+          },
+          {
+            "title": "Motion as identity, not decoration",
+            "text": "A heavier animation layer has a real performance cost — this build's Lighthouse performance score sits around 82 rather than a perfect 100, specifically because of the custom cursor, page transitions, and interaction feedback throughout. That was a conscious trade: a static, perfectly-scored site would look and feel like a template. This one doesn't."
+          }
+        ]
+      },
+      "gallery": {
+        "heading": "A look through the flow",
+        "labels": {
+          "home-desktop": "Home Page - Desktop",
+          "home-mobile": "Home Page - Mobile",
+          "about": "About Page",
+          "menu": "Menu Page",
+          "cart": "Cart Slide-In Element",
+          "checkout": "Checkout Page",
+          "confirmation": "Confirmation Page"
+        }
+      },
+      "reflection": {
+        "text": "This project exists to demonstrate the idea, not to run a real kitchen. The honest next step is a real client: a real menu, a real WhatsApp Business number, and testing it against an actual lunch rush — the kind of pressure a demo can't fake."
+      }
+    }
   }
 }
