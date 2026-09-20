@@ -67,7 +67,14 @@
     "title": "نمونه‌ کارهای <gradient>منتخب من</gradient><accent>.</accent>",
     "items": {
       "liveButton": "مشاهده آنلاین",
-      "githubButton": "مشاهده کد"
+      "githubButton": "مشاهده کد",
+      "caseStudyLink": "مطالعه موردی را بخوانید",
+      "bun-and-fire": {
+        "title": "Bun & Fire",
+        "category": "مفهومی · غذا و نوشیدنی",
+        "description": "یک سایت مفهومی برای سفارش غذا از فست‌فودهای محلی — کد QR را اسکن کنید، سفارش دهید، تمام.",
+        "scope": ["۵ صفحه", "پرداخت مهمان", "تحویل از طریق واتساپ"]
+      }
     },
     "comingSoon": {
       "title": "کارهای جدید در راه‌اند.",
