@@ -87,6 +87,12 @@
         "category": "Concept · Food & Beverage",
         "description": "A concept ordering site for local fast-food spots — scan the QR code, order, done.",
         "scope": ["5 pages", "Guest checkout", "WhatsApp delivery"]
+      },
+      "noor-dental": {
+        "title": "Noor Dental Studio",
+        "category": "Concep · Healthcare",
+        "description": "A bilingual concept site for a boutique dental clinic, designed to build trust before the first appointment.",
+        "scope": ["7 pages", "English + Arabic (RTL)", "Cinematic scroll"]
       }
     },
 
@@ -305,6 +311,132 @@
       },
       "reflection": {
         "text": "This project exists to demonstrate the idea, not to run a real kitchen. The honest next step is a real client: a real menu, a real WhatsApp Business number, and testing it against an actual lunch rush — the kind of pressure a demo can't fake."
+      }
+    },
+    "noor-dental": {
+      "type": "Personal Showcase Project",
+      "hero": {
+        "title": "<gradient>Noor Dental Studio</gradient>",
+        "tagline": "Designing a premium dental experience that builds trust before the first appointment."
+      },
+      "facts": {
+        "role": "Frontend Design & Development",
+        "timeline": "Solo build",
+        "pages": "7 (EN + AR)"
+      },
+      "overview": {
+        "problem": "Most dental websites look and sound alike: clinical blue, stock-photo smiles, sales-first copy, and a phone number where the booking flow should be. For someone who hasn't seen a dentist in years, or who is comparing four clinics, or who just needs an after-work slot, that doesn't build trust. And in the Gulf, a second language is often bolted on as an afterthought rather than designed in.",
+        "solution": "Noor is designed around three patients instead of a template. The anxious patient gets a calm First Visit page that explains every step and says plainly that they're in control. The comparison shopper gets an Invisalign page with the full treatment journey, a full-screen before and after, and honest pricing guidance. The busy professional gets a short booking flow, clear hours, and WhatsApp one tap away. All of it exists in English and Arabic, with real right-to-left layouts rather than a translated copy."
+      },
+      "features": {
+        "heading": "Build around real patients",
+        "items": [
+          {
+            "title": "Persona-led pages",
+            "description": "Every page has a job. First Visit is a step-by-step walkthrough for the nervous patient, Invisalign is a comparison shopper's research page, and Booking and Contact are built for speed. Even the Home page asks 'How can we help you today?' and sends each visitor to the right place."
+          },
+          {
+            "title": "Cinematic Scroll Scenes",
+            "description": "Home is a sequence of full-viewport scenes that dissolve into one another with a depth-blur transition, so scrolling feels like moving deeper into the clinic instead of down a page. One scroll value drives every scene-linked effect, and phones and reduced-motion settings fall back to a plain, calm layout."
+          },
+          {
+            "title": "Real Arabic, Real RTL",
+            "description": "English and Arabic were built together from day one: logical CSS properties, separate font pairings for each script, and dates, times and nubers formatted per language. Image mirror only where a mirrored composition genuinely works, never by blanket rule."
+          },
+          {
+            "title": "A Before & After Worth Stopping For",
+            "description": "The Invisalign comparison takes over the whole screen, sweeps gently on its own to show it can be dragged, then hands control to the visitor — by mouse, touch or keyboard — with a thumbnail gallery for more cases."
+          },
+          {
+            "title": "Forms That Respect the Task",
+            "description": "Booking is a three-step flow with inline validation, clear error messages and keyboard support. Nothing scroll-triggered sits around either form, because someone filling in their details shouldn't have to wait for an animation."
+          },
+          {
+            "title": "Accessible & Measured",
+            "description": "Proper landmarks, ARIA-correct accordions and a reduced-motion fallback run throughout. In local production runs, Lighthouse reached 100 for accessibility, best practices and SEO, with desktop performance at 99, backed by per-language metadata, hreflang, a sitemap and Open Graph images."
+          }
+        ]
+      },
+      "process": {
+        "heading": "Four build phases",
+        "steps": [
+          {
+            "title": "Personas before pixels",
+            "description": "Three patients were defined first, along with what each one needs from a dental website. Every page's job came from that list rather than from a template."
+          },
+          {
+            "title": "Tokens & bilingual foundation",
+            "description": "Colour, type, spacing and the Arabic font pairing were set as tokens, and locale routing was in place before any component existed, so right-to-left was  never a retrofit."
+          },
+          {
+            "title": "The scene system, tested early",
+            "description": "The scroll engine behind Home was built and tested with dummy scenes and a language toggle before any real content went in, because the whole layout depended on it."
+          },
+          {
+            "title": "Pages, then the audit",
+            "description": "Components and pages came next, followed by the forms. A full pass on SEO, accessibility and Lighthouse performance came last, with each fix measured rather than assumed."
+          }
+        ]
+      },
+      "stack": {
+        "heading": "Why this stack",
+        "reasons": [
+          {
+            "name": "Next.js + next-intl",
+            "reason": "Locale-prefixed routing gave clean /en and /ar versions of every page, with per-locale metadata, hreflang and a sitemap generated from a single route list."
+          },
+          {
+            "name": "GSAP + ScrollTrigger",
+            "reason": "Pinned scenes and scrubbed timelines are exactly what it's built for. Hand-rolled scroll math worked for a prototype, but not for a whole page of coordinated scenes."
+          },
+          {
+            "name": "Motion",
+            "reason": "Kept for component-level work like reveals,accordions and step transitions, where React-driven animation is simpler than a timeline."
+          },
+          {
+            "name": "Tailwind CSS v4",
+            "reason": "CSS-first tokens plus logical-property utilities made right-to-left mirroring mostly automatic, and kept colour, type and spacing consistent across both languages."
+          }
+        ]
+      },
+      "decisions": {
+        "heading": "Deliberate trade-offs, not oversights",
+        "items": [
+          {
+            "title": "Cinematic where it persuades, calm where it converts",
+            "text": "Pinned scroll scnes live only on Home and the Invisalign journey. Booking and Contact deliberately have no scroll-triggered mtion around their forms, because scroll-jacking helps a visitor browse but gets in the way of someone completing a task. Motion also has a performance cost: desktop scores 99 in Lighthouse while throttled mobile scores lower, so phones skip the pinned scenes entirely and get a simpler layout."
+          },
+          {
+            "title": "Mirror some images, not all",
+            "text": "Flipping a photo under right-to-left reverses real details, like a hair parting. Only a few images are mirrored, chose deliberately because their composition has to face the text. Everything else keeps ots original orientation."
+          },
+          {
+            "title": "Front-end only, on purpose",
+            "text": "The booking and contact forms validate fully but end in a mock success state. A real backend would add spam handling, API keys and ongoing upkeep to a demo. The production path is a serverless function that emails the clinics and syncs a calendar."
+          },
+          {
+            "title": "Honest about being a concept",
+            "text": "The imagery is AI-generated and stylised, interiors included, and the contact details, prices and testimonials are fictional. Because of that, search indexing is controlled by a single environment flag and is off for the demo, so a made-up phone number never reaches search results."
+          }
+        ]
+      },
+      "gallery": {
+        "heading": "A look through the experience",
+        "labels": {
+          "home-desktop": "Home Page - Desktop",
+          "home-mobile": "Home Page - Mobile",
+          "home-arabic": "Home Page - Arabic (RTL)",
+          "your-care": "Your Care Page",
+          "invisalign": "Invisalign - Treatment Journey",
+          "compare": "Before & After Comparison",
+          "first-visit": "First Visit Page",
+          "about": "About Page",
+          "booking": "Booking Flow",
+          "contact": "Contact Page"
+        }
+      },
+      "reflection": {
+        "text": "This projects exists to demonstrate a way of designing for patients, not to run a clinic. The honest next step is a real practice: real photography, a booking and availability backend, content in a CMS, and Arabic copy reviewed by a native speaker before anything goes public."
       }
     }
   }

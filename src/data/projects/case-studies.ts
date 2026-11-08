@@ -47,6 +47,76 @@ export const caseStudies: CaseStudyData[] = [
       type: "Bricolage Grotesque (headings) · Plus Jakarta Sans (body) · Kaushan Script (script)",
     },
   },
+
+  {
+    slug: "noor-dental",
+    category: "Concept · Healthcare",
+    technologies: ["nextjs", "typescript", "tailwind", "gsap", "framer"],
+    liveUrl: "https://noor-dental.netlify.app/",
+    githubUrl: "https://github.com/SadafNemani/noor-dental-studio",
+    year: "2026",
+    gallery: [
+      {
+        key: "home-desktop",
+        image: "/projects/noor-dental-studio/home-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "home-mobile",
+        image: "/projects/noor-dental-studio/home-mobile.webp",
+        orientation: "mobile",
+      },
+      {
+        key: "home-arabic",
+        image: "/projects/noor-dental-studio/home-arabic-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "your-care",
+        image: "/projects/noor-dental-studio/your-care-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "invisalign",
+        image: "/projects/noor-dental-studio/invisalign-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "compare",
+        image: "/projects/noor-dental-studio/compare-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "first-visit",
+        image: "/projects/noor-dental-studio/first-visit-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "about",
+        image: "/projects/noor-dental-studio/about-desktop.webp",
+        orientation: "desktop",
+      },
+      {
+        key: "booking",
+        image: "/projects/noor-dental-studio/booking-mobile.webp",
+        orientation: "mobile",
+      },
+      {
+        key: "contact",
+        image: "/projects/noor-dental-studio/contact-desktop.webp",
+        orientation: "desktop",
+      },
+    ],
+    designTokens: {
+      colors: [
+        { name: "Pine", hex: "#2F4A3E" },
+        { name: "Sand Gold", hex: "#B98D4F" },
+        { name: "Warm Ivory", hex: "#FAF6F1" },
+        { name: "Warm Charcoal", hex: "#26241F" },
+      ],
+      type: "Fraunces (headings) · Inter (body) · Markazi Text & IBM Plex Sans Arabic (Arabic)",
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string) {

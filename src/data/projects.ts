@@ -11,4 +11,14 @@ export const projects: Project[] = [
     order: 1,
     hasCaseStudy: true,
   },
+  {
+    slug: "noor-dental",
+    technologies: ["nextjs", "typescript", "tailwind", "gsap", "framer"],
+    thumbnail: "/projects/noor-dental-studio/home-desktop.webp",
+    github: "https://github.com/SadafNemani/noor-dental-studio",
+    live: "https://noor-dental.netlify.app/",
+    featured: true,
+    order: 2,
+    hasCaseStudy: true,
+  },
 ];
